@@ -6,42 +6,52 @@
  */
 
 module.exports = {
-  attributes: {
-    id : {
-      type : "number",
-      unique : true,
-      required : true
+    attributes: {
+        id: {
+            type: "string",
+            columnType: "varchar(36)",
+            required: true,
+            unique: true
+        },
+        name: {
+            type: "string",
+        },
+        email: {
+            type: "string"
+        },
+        phoneNumber: {
+            type: "string",
+            required: true
+        },
+        birthDate: {
+            type: "string",
+            columnType: "datetime",
+        },
+        sex: {
+            type: "number",
+        },
+        sexInterest: {
+            type: "number"
+        },
+        description: {
+            type: "string"
+        },
+        lastSeen: {
+            type: "string",
+            columnType: "datetime"
+        },
+        createdAt: {
+            type: "string",
+            columnType: "datetime",
+        },
+        updatedAt: {
+            type: "string",
+            columnType: "datetime"
+        },
+        deletedAt: {
+            type: "string",
+            columnType: "datetime"
+        },
     },
-    name : {
-      type : "string",
-      required : true
-    },
-    date : {
-      type : "string",
-      columnType : "datetime",
-    },
-    sexe : {
-      type : "string",
-      isIn : ["M", "F", "O"],
-    },
-    description : {
-      type : "string"
-    },
-    email : {
-      type : "string"
-    },
-    interet : {
-      type : "string",
-      isIn : ["M", "F", "O"],
-    },
-    telephone : {
-      type : "string",
-      required : true
-    },
-    actif : {
-      type : "boolean",
-      defaultsTo : true 
-    }
-  },
 };
 
