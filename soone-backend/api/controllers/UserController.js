@@ -6,7 +6,16 @@
  */
 
 module.exports = {
-  
+    checkCredentials: function (req, res) {
 
+    },
+    addUser: async function (req, res) { 
+        var userVal = req.query;
+        var user = await sails.helpers.addUser.with(userVal);
+        res.json(user);
+    },
+    getUser: function (req, res) { 
+
+    },
 };
 
