@@ -16,8 +16,7 @@ module.exports = {
             responseType : 'json',
         },
         alreadyExists : {
-            description : 'User with the specified phone number already exists',
-            responseType : 'badRequest'
+            description: 'The phone number already exists'
         }
     },
 
@@ -25,11 +24,17 @@ module.exports = {
         var uuid = require('uuid/v4');
         var parameters = { phoneNumber : inputs.phoneNumber };
 
+        //Test if the phone number already exists
         if(await User.findOne(parameters)) { 
             return exits.alreadyExists(); 
         }
 
+        //Fill parameters with calculated values
         parameters.id = uuid();
+        parameters.createdAt = new Date().toISOString();
+        parameters.updatedAt = parameters.createdAt;
+
+        //Create user
         var user = await User.create(parameters).fetch();
 
         sails.log("Created new user with id : " + parameters.id);

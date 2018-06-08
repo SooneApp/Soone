@@ -11,7 +11,12 @@ module.exports = {
     },
     addUser: async function (req, res) { 
         var userVal = req.query;
-        var user = await sails.helpers.addUser.with(userVal);
+        var user = await sails.helpers.addUser.with(userVal)
+            .tolerate('alreadyExists', (err) => {
+                res.status(409);
+                return err;
+            });
+        
         res.json(user);
     },
     getUser: function (req, res) { 
