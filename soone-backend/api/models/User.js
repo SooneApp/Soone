@@ -19,12 +19,10 @@ module.exports = {
     date : {
       type : "string",
       columnType : "datetime",
-      required : true
     },
     sexe : {
       type : "string",
-      isIn : ["H", "F", "O"],
-      required : true
+      isIn : ["M", "F", "O"],
     },
     description : {
       type : "string"
@@ -34,8 +32,7 @@ module.exports = {
     },
     interet : {
       type : "string",
-      isIn : ["H", "F", "O"],
-      required : true
+      isIn : ["M", "F", "O"],
     },
     telephone : {
       type : "string",
