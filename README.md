@@ -25,14 +25,14 @@ Pour l’initialisation du projet de l’application Android j’ai repris la ba
 ---
 ### Matthis
 08-06-2018 : 
-    - Installation de l'environnement de travail et mise en place de l'IDE
-    - Conception de la base de données, et implémentation via l'orm de Sails.
+   - Installation de l'environnement de travail et mise en place de l'IDE
+   - Conception de la base de données, et implémentation via l'orm de Sails.
 
 ---
 ### Nans
 08-06-2018 : 
-    - Installation de l'environnement de travail et mise en place de l'IDE
-    - Conception de la base de données, et implémentation via l'orm de Sails.
+   - Installation de l'environnement de travail et mise en place de l'IDE
+   - Conception de la base de données, et implémentation via l'orm de Sails.
 
 ---
 ### Loïc
