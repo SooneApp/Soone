@@ -1,5 +1,5 @@
 /**
- * Message.js
+ * MatchDecision.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -14,21 +14,18 @@ module.exports = {
             required: true,
             unique: true
         },
-        chatId: {
+        idMatch: {
             type: "string",
-            columnType: "varchar(36)"
+            columnType: "varchar(36)",
+            required: true,
         },
-        senderId: {
+        idUser: {
             type: "string",
-            columnType: "varchar(36)"
+            columnType: "varchar(36)",
+            required: true,
         },
-        content: {
-            type: "string",
-            columnType: "varchar(512)"
-        },
-        date: {
-            type: "string",
-            columnType: "datetime",
+        active: {
+            type: "boolean",
         },
     },
 

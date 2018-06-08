@@ -9,16 +9,17 @@ module.exports = {
     attributes: {
         id: {
             type: "string",
-            primaryKey: true
+            columnType: "varchar(36)",
+            required: true,
+            unique: true
         },
         name: {
             type: "string",
-            required: true
         },
         email: {
             type: "string"
         },
-        telephone: {
+        phoneNumber: {
             type: "string",
             required: true
         },
