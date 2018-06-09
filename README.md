@@ -7,7 +7,8 @@
 #### Initialisation du projet et reprise du travail déjà effectué ~1h30
 
 J’ai créé une [organisation](https://github.com/SooneApp) sur **Github** afin que l’on ait nos répertoires centralisés. Cela facilitera le lien entre les différents répertoires, actuellement un pour le *back-end* et un pour le *front-end (Android)*, et les issues crée précédemment sur un répertoire personnel.
-J’ai importé ce répertoire personnel dans l’organisation, car celui-ci contenait toutes les tâches que nous avions créées lors de la précédente période en école.
+
+J’ai importé ce répertoire personnel dans l’organisation, car celui-ci contenait toutes les tâches que nous avions créées lors de la précédente période en école.
 
 Une fois ce répertoire importer, dans l’organisation, avec les tâches j’ai créé 3 projets différents et ai réparti l’ensemble des tâches dans ceux-ci :
  - [Back-End](https://github.com/orgs/SooneApp/projects/3): Composée de 43 tâches.
@@ -23,8 +24,16 @@ Pour l’initialisation du projet de l’application Android j’ai repris la ba
 
 ---
 ### Matthis
+08-06-2018 : 
+    - Installation de l'environnement de travail et mise en place de l'IDE
+    - Conception de la base de données, et implémentation via l'orm de Sails.
+
 ---
 ### Nans
+08-06-2018 : 
+    - Installation de l'environnement de travail et mise en place de l'IDE
+    - Conception de la base de données, et implémentation via l'orm de Sails.
+
 ---
 ### Loïc
 ---

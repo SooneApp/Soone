@@ -1,5 +1,5 @@
 /**
- * Message.js
+ * TimedChat.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -14,21 +14,21 @@ module.exports = {
             required: true,
             unique: true
         },
-        chatId: {
+        idUser1: {
             type: "string",
-            columnType: "varchar(36)"
+            columnType: "varchar(36)",
+            required: true,
+            unique: true
         },
-        senderId: {
+        idUser2: {
             type: "string",
-            columnType: "varchar(36)"
+            columnType: "varchar(36)",
+            required: true,
+            unique: true
         },
-        content: {
+        startDate: {
             type: "string",
-            columnType: "varchar(512)"
-        },
-        date: {
-            type: "string",
-            columnType: "datetime",
+            columnType: "datetime"
         },
     },
 
