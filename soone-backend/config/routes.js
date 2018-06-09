@@ -12,5 +12,5 @@ module.exports.routes = {
   '/': {
     view: 'index'
   },
-  "PUT /api/user" : "UserController.addUser"
+  "POST /api/user" : "UserController.addUser"
 };

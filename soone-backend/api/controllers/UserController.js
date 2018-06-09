@@ -10,7 +10,8 @@ module.exports = {
 
     },
     addUser: async function (req, res) { 
-        var userVal = req.query;
+        var userVal = _.extend(req.query || {}, req.params || {}, req.body || {});
+
         var user = await sails.helpers.addUser.with(userVal)
             .tolerate('alreadyExists', (err) => {
                 res.status(409);

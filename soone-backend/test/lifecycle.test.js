@@ -6,8 +6,8 @@ before(function(done) {
   this.timeout(5000);
 
   sails.lift({
-    log: { level: 'warn' },
-
+    log: { level: "warn" },
+    models: { migrate: "drop" }
   }, function(err) {
     if (err) { return done(err); }
 
