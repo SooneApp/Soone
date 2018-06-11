@@ -14,7 +14,9 @@ Une fois ce répertoire importer, dans l’organisation, avec les tâches j’ai
  - [Back-End](https://github.com/orgs/SooneApp/projects/3): Composée de 43 tâches.
  - [Front-End](https://github.com/orgs/SooneApp/projects/2): Composée de 26 tâches.
  - [Database](https://github.com/orgs/SooneApp/projects/4): Composée de 3 tâches.
+#### Initialisation du projet Android [#1](https://github.com/SooneApp/Soone-Android-App/issues/1) ~3h
 
+Pour l’initialisation du projet de l’application Android j’ai repris la base d’une application open source personnel afin de garder mes marques et pouvoir implémenter plus rapidement les différentes fonctionnalités qu’il y aura à réaliser.
 ### Hugo
 
 #### Recuperation des serveurs ( 3 heures )
@@ -24,9 +26,7 @@ J'ai recuperé par le biai de Monsieur Pierre Richard, les accès aux différent
  - Mise en place de la base de donnée mysql et création des accès
  - Configuration initiale du firewall pfsence
 
-#### Initialisation du projet Android [#1](https://github.com/SooneApp/Soone-Android-App/issues/1) ~3h
 
-Pour l’initialisation du projet de l’application Android j’ai repris la base d’une application open source personnel afin de garder mes marques et pouvoir implémenter plus rapidement les différentes fonctionnalités qu’il y aura à réaliser.
 
 
 ## Vendredi 08 juin
