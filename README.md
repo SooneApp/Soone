@@ -38,7 +38,7 @@ Pour l’initialisation du projet de l’application Android j’ai repris la ba
 ### Loïc
 ---
 ### Hugo
-08-06-2018
+08-06-2018 :
     - Installation du serveur de production 
         - Installation des dépendances éssentiels
         - Installation et configuration de base de NodeJS
