@@ -42,6 +42,11 @@ J'ai recuperé par le biai de Monsieur Pierre Richard, les accès aux différent
 
 ---
 ### Loïc
+    - Création d'une installation NodeJS et SailsJS [estimé à 1 jour, réalisé en 1/2 jour]
+    - Mise à jour de l'organisation projet back-end : [réalisé en amont du projet]
+      - Redéfinition des tâches suite au brainstorm
+      - Ajout de descriptions pour l'ensemble des tâches
+    - Début de travail sur la gestion utilisateur (model, route, controller & helper) [estimé à 1 jour, en cours]
 ---
 ### Hugo
 Objectif de la journée : Mettre en place tout le nécéssaire au niveau du serveur pour que l'équipe de developpement puisse commencer à travailler.
@@ -73,7 +78,15 @@ Objectif atteint
 
 ---
 ### Loïc
-
+  - Suite de travail sur la gestion utilisateur (terminé par Nans) [estimé à 1 jour, réalisé en 1 jour et 1/2]:
+    - Routes connect, disconnect, get, add & update(WIP) crées
+    - Controller et helpers gérant l'ensemble de ces routes
+    - Création de tests pour l'ensemble des éléments de la gestion utilisateur
+  - Mise en place de tests unitaire : [non estimé, inclus dans la création de tests utilisateur]
+    - Mocha comme framework de test unitaire
+    - Supertest pour simuler des requêtes HTTP sur les routes
+  - Début de travail sur le système de rencontre instantanées [estimé à 1 jour, en cours]
+  - Tri sur les tickets git [réalisé en amont du projet]
 
 ---
 ### Hugo
