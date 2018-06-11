@@ -49,3 +49,7 @@ Objectif atteint
 - Recherche d'une solution de monitoring de performance (APM)
 ---
 ### Germain
+
+08-06-2018 :
+- Mise en place d'un serveur pour heberger le site vitrine + accès FTP
+- Recherche d'une solution de sécurisation connexion HTTPS client<->serveur sur l'application Sails.js du serveur de prod
