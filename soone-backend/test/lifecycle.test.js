@@ -5,7 +5,7 @@ before(function(done) {
   // Increase the Mocha timeout so that Sails has enough time to lift, even if you have a bunch of assets.
   this.timeout(5000);
 
-  sails.lift({
+  Sails.lift({
     log: { level: "warn" },
     models: { migrate: "drop" }
   }, function(err) {
@@ -16,6 +16,6 @@ before(function(done) {
 });
 
 after(function(done) {
-
-  sails.lower(done);
+  
+  Sails.lower(done);
 });
