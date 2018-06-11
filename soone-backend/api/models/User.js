@@ -40,13 +40,8 @@ module.exports = {
             type: "string",
             columnType: "datetime"
         },
-        createdAt: {
-            type: "string",
-            columnType: "datetime",
-        },
-        updatedAt: {
-            type: "string",
-            columnType: "datetime"
+        accountType: {
+            model: "accounttype",
         },
         deletedAt: {
             type: "string",

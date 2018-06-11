@@ -31,8 +31,6 @@ module.exports = {
 
         //Fill parameters with calculated values
         parameters.id = uuid();
-        parameters.createdAt = new Date().toISOString();
-        parameters.updatedAt = parameters.createdAt;
 
         //Create user
         var user = await User.create(parameters).fetch();
