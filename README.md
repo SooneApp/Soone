@@ -67,6 +67,7 @@ Objectif atteint
 
 ### Général
 -Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, diffcultés rencontrées et objectifs de la journée
+-Brainstorm sur différentes parties clés de l'application (notemment le système de match instantané)
 
 ---
 ### Matthis
@@ -74,8 +75,15 @@ Objectif atteint
    
 ---
 ### Nans
-   - 
-
+  - Travail sur la gestion utilisateur (commencé par Loic) [estimé à 1j, 2h passées]:
+    - Comprend des tests unitaires et l'ajout de relation dans le modèle utilistateur.
+  - Tentative de mise en place de "seed" pour la base de donnée [1 heure passé - non fructueux]
+  
+  - Mise à jour / fin d'implémentation de différents models [estimé à 2h, 4h passées]
+    - Découverte des relations many-to-many et many-to-one via l'ORM de sails
+    
+   - Mise en place de connecteurs pour lancer la base de donnée sur un serveur mysql local [2h passées]
+  
 ---
 ### Loïc
   - Suite de travail sur la gestion utilisateur (terminé par Nans) [estimé à 1 jour, réalisé en 1 jour et 1/2]:
