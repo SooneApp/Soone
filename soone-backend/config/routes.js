@@ -12,5 +12,11 @@ module.exports.routes = {
   '/': {
     view: 'index'
   },
-  "POST /api/user" : "UserController.addUser"
+  //USER ROUTES
+  "GET /api/user" : "UserController.get",
+  "POST /api/user" : "UserController.add",
+  "PUT /api/user" : "UserController.update",
+  "DELETE /api/user" : "UserController.delete",
+  "POST /api/connect" : "UserController.connect",
+  "GET /api/disconnect" : "UserController.disconnect"
 };

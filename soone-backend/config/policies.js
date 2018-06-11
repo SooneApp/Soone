@@ -9,14 +9,10 @@
  */
 
 module.exports.policies = {
-
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions, unless overridden.       *
-  * (`true` allows public access)                                            *
-  *                                                                          *
-  ***************************************************************************/
-
-  // '*': true,
-
+  UserController: {
+    add: "isNotLoggedIn",
+    update: "isLoggedIn",
+    connect: "isNotLoggedIn",
+    disconnect: "isLoggedIn"
+  }
 };

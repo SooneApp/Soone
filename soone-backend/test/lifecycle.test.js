@@ -1,4 +1,4 @@
-var sails = require('sails');
+var Sails = require('sails');
 
 // Before running any tests...
 before(function(done) {
@@ -11,16 +11,11 @@ before(function(done) {
   }, function(err) {
     if (err) { return done(err); }
 
-    // here you can load fixtures, etc.
-    // (for example, you might want to create some records in the database)
-
-    return done();
+    User.create({ "id": "d344d15f-0721-48cc-a113-a7243307e80", "name": "johndoe", "phoneNumber": "0101010101"}, done);
   });
 });
 
 after(function(done) {
-  // here you can clear fixtures, etc.
-  // (e.g. you might want to destroy the records you created above)
 
   sails.lower(done);
 });
