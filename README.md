@@ -42,8 +42,8 @@ Pour l’initialisation du projet de l’application Android j’ai repris la ba
 
 Objectif de la journée : Mettre en place tout le nécéssaire au niveau du serveur pour que l'équipe de developpement puisse commencer à travailler.
 Objectif atteint 
-- Installation du serveur de production ( Estimation : 1 journée, réalisée en 1 journée )
-  - Installation des dépendances éssentiels
+- Installation du serveur de production ( Estimation : 1 journée, réalisé en 1 journée )
+  - Installation des dépendances éssentielles
   - Installation et configuration de base de NodeJS
   - Installation et configuration de base de l'application SailsJS
 - Recherche d'une solution de monitoring de performance (APM)
