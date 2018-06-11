@@ -20,17 +20,14 @@ Une fois ce répertoire importer, dans l’organisation, avec les tâches j’ai
 Pour l’initialisation du projet de l’application Android j’ai repris la base d’une application open source personnel afin de garder mes marques et pouvoir implémenter plus rapidement les différentes fonctionnalités qu’il y aura à réaliser.
 
 
-
+## Vendredi 08 juin
 
 ---
 ### Matthis
-08-06-2018 : 
    - Installation de l'environnement de travail et mise en place de l'IDE
    - Conception de la base de données, et implémentation via l'orm de Sails.
-
 ---
 ### Nans
-08-06-2018 : 
    - Installation de l'environnement de travail et mise en place de l'IDE
    - Conception de la base de données, et implémentation via l'orm de Sails.
 
@@ -38,8 +35,6 @@ Pour l’initialisation du projet de l’application Android j’ai repris la ba
 ### Loïc
 ---
 ### Hugo
-08-06-2018 :
-
 Objectif de la journée : Mettre en place tout le nécéssaire au niveau du serveur pour que l'équipe de developpement puisse commencer à travailler.
 Objectif atteint 
 - Installation du serveur de production ( Estimation : 1 journée, réalisé en 1 journée )
@@ -50,6 +45,31 @@ Objectif atteint
 ---
 ### Germain
 
-08-06-2018 :
 - Mise en place d'un serveur pour heberger le site vitrine + accès FTP
 - Recherche d'une solution de sécurisation connexion HTTPS client<->serveur sur l'application Sails.js du serveur de prod
+- 
+
+## Lundi 11 juin
+
+### Général
+-Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, diffcultés rencontrées et objectifs de la journée
+
+---
+### Matthis
+   - 
+   
+---
+### Nans
+   - 
+
+---
+### Loïc
+
+
+---
+### Hugo
+ -
+
+---
+### Germain
+ -
