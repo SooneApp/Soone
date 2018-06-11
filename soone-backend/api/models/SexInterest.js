@@ -16,6 +16,12 @@ module.exports = {
             type: "string",
             columnType: "varchar(16)"
         },
+
+        //relation
+        users: {
+            collection: 'user',
+            via: 'sexInterest'
+        }
     },
 
 };
