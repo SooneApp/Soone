@@ -77,8 +77,14 @@ Objectif atteint
 
 ---
 ### Hugo
- -
+Objectif de la journée : Mettre en place une suite de monitoring permettant d'avoir des statistiques sur l'utilisation de l'API sailsjs.
+Les statistiques sont importantes pour debuguer l'appliquation et comprendre les comportements utilisateurs.
 
+- Installation de la suite statistique ( Estimation : 1 journée, réalisé en 1/2 journée )
+  - Installation du serveur APM
+  - Installation d'Elasticksearch, Kibana
+  - Configuration de l'application Sailsjs avec le serveur APM
+- Lecture de la documentation de pfsence -> L'objectif est de faire passer le traffic des serveurs de pro/preprod via le firewall pfsense.
 ---
 ### Germain
  -
