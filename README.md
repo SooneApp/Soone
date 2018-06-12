@@ -70,7 +70,7 @@ Objectif atteint
 
 ### Général
 
-   - Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, diffcultés rencontrées et objectifs de la journée
+   - Mise en place de stand up meeting  tous les matins 9h15 pour faire le point sur tâches réalisées, difficultés rencontrées et objectifs de la journée. Germain animateur.
    - Brainstorm sur différentes parties clés de l'application (notemment le système de match instantané)
 
 ---
@@ -121,4 +121,6 @@ J'ai passé l'après midi a migrer et reinstaller la configuration sur le nouvea
 
 ---
 ### Germain
- - 
+ -Suite HTTPS Sails.js
+ - Correction FTP du serveur web
+ - Recherche sur les VM fournis par l'école, soucis de pare feu interne et externe de l'école
