@@ -1,9 +1,0 @@
-Commandes Node depuis le Node.js command prompt :
--npm install sails -g //installe sails au niveau de l'installation NodeJs de la machine
--cd soone-backend
--npm install
--sails lift //lancer le serveur
-
-Configuration initiale du projet :
--sails new "soone-backend" //création du projet, ne pas reproduire
--2 //le projet a été créé en mode empty, ne pas reproduire

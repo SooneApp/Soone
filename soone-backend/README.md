@@ -1,27 +1,16 @@
-# soone-backend
+# BACKEND INFO
 
-a [Sails v1](https://sailsjs.com) application
-
-
-### Links
-
-+ [Get started](https://sailsjs.com/get-started)
-+ [Sails framework documentation](https://sailsjs.com/documentation)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+## Commandes Node depuis le Node.js command prompt :
+-npm install sails -g //installe sails au niveau de l'installation NodeJs de la machine
+-cd soone-backend
+-npm install
+-sails lift //lancer le serveur
 
 
-### Version info
+## Configuration initiale du projet
+-sails new "soone-backend" //création du projet, ne pas reproduire
+-2 //le projet a été créé en mode empty, ne pas reproduire
 
-This app was originally generated on Fri Jun 08 2018 10:24:08 GMT+0200 (Paris, Madrid (heure d’été)) using Sails v1.0.2.
-
-<!-- Internally, Sails used [`sails-generate@1.15.28`](https://github.com/balderdashy/sails-generate/tree/v1.15.28/lib/core-generators/new). -->
-
-
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
-
+## Lancement des tests unitaires
+-cd soone-backend
+-npm test //script configuré dans package.json

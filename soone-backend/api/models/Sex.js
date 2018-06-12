@@ -15,6 +15,12 @@ module.exports = {
         label: {
             type: "string",
             columnType: "varchar(16)"
+        },
+
+        //relation
+        users: {
+            collection: 'user',
+            via: 'sex'
         }
 
     },
