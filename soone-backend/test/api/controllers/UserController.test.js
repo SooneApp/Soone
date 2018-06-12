@@ -91,19 +91,31 @@ describe('UserController.update', function () {
             auth.put("/api/user")
                 .send({
                     id: "d344d15f-0721-48cc-a113-a7243307e80",
-                    email: "johndoe@gmail.com",
-                    sex: 1,
-                    description: "Me? Simply the best"
+                    name: "johndoeuf",
+                    email: "johndaube@gmail.com",
+                    phoneNumber: "0603030303",
+                    birthDate: new Date('1885-12-17T12:24:00'),
+                    sex: 2,
+                    sexInterest: 2,
+                    description: "Me? Simply the best",
+                    lastSeen: new Date('1996-12-17T03:24:00'),
+                    accountType: 3,
+                    deletedAt: new Date('2017-12-17T03:24:00')
                 })
                 .expect(200)
                 .end(function (err, res) {
 
                     assert.equal(res.body.id, "d344d15f-0721-48cc-a113-a7243307e80");
-                    assert.equal(res.body.name, "johndoe");
-                    assert.equal(res.body.phoneNumber, "0101010101");
-                    assert.equal(res.body.email, "johndoe@gmail.com");
-                    assert.equal(res.body.sex, 1);
+                    assert.equal(res.body.name, "johndoeuf");
+                    assert.equal(res.body.email, "johndaube@gmail.com");
+                    assert.equal(res.body.phoneNumber, "0603030303");
+                    assert.equal(res.body.birthDate, new Date('1885-12-17T12:24:00').toISOString());
+                    assert.equal(res.body.sex, 2);
+                    assert.equal(res.body.sexInterest, 2);
                     assert.equal(res.body.description, "Me? Simply the best");
+                    assert.equal(res.body.lastSeen, new Date('1996-12-17T03:24:00').toISOString());
+                    assert.equal(res.body.accountType, 3);
+                    assert.equal(res.body.deletedAt, new Date('2017-12-17T03:24:00').toISOString());
 
                     done();
                 });

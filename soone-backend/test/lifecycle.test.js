@@ -4,7 +4,7 @@ var async = require("async");
 // Before running any tests...
 before(function (done) {
     // Increase the Mocha timeout so that Sails has enough time to lift, even if you have a bunch of assets.
-    this.timeout(5000);
+    this.timeout(10000);
 
     Sails.lift({
         log: {level: "warn"},
@@ -42,16 +42,6 @@ before(function (done) {
                 },done);
             });
         });
-
-        // AccountType.create({
-        //     "id": 4,
-        //     "label" : "Admin"
-        // });
-        /*Sex.create({
-            "id": 1,
-            "label": "label"
-        });*/
-
 });
 
 after(function (done) {
