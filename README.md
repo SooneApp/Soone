@@ -42,6 +42,11 @@ J'ai recuperé par le biai de Monsieur Pierre Richard, les accès aux différent
 
 ---
 ### Loïc
+    - Création d'une installation NodeJS et SailsJS [estimé à 1 jour, réalisé en 1/2 jour]
+    - Mise à jour de l'organisation projet back-end : [réalisé en amont du projet]
+      - Redéfinition des tâches suite au brainstorm
+      - Ajout de descriptions pour l'ensemble des tâches
+    - Début de travail sur la gestion utilisateur (model, route, controller & helper) [estimé à 1 jour, en cours]
 ---
 ### Hugo
 Objectif de la journée : Mettre en place tout le nécéssaire au niveau du serveur pour que l'équipe de developpement puisse commencer à travailler.
@@ -61,7 +66,8 @@ Objectif atteint
 ## Lundi 11 juin
 
 ### Général
-- Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, difficultés rencontrées et objectifs de la journée. Réunions animées par Germain.
+-Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, diffcultés rencontrées et objectifs de la journée
+-Brainstorm sur différentes parties clés de l'application (notemment le système de match instantané)
 
 ---
 ### Matthis
@@ -69,11 +75,26 @@ Objectif atteint
    
 ---
 ### Nans
-   - 
-
+  - Travail sur la gestion utilisateur (commencé par Loic) [estimé à 1j, 2h passées]:
+    - Comprend des tests unitaires et l'ajout de relation dans le modèle utilistateur.
+  - Tentative de mise en place de "seed" pour la base de donnée [1 heure passé - non fructueux]
+  
+  - Mise à jour / fin d'implémentation de différents models [estimé à 2h, 4h passées]
+    - Découverte des relations many-to-many et many-to-one via l'ORM de sails
+    
+   - Mise en place de connecteurs pour lancer la base de donnée sur un serveur mysql local [2h passées]
+  
 ---
 ### Loïc
-
+  - Suite de travail sur la gestion utilisateur (terminé par Nans) [estimé à 1 jour, réalisé en 1 jour et 1/2]:
+    - Routes connect, disconnect, get, add & update(WIP) crées
+    - Controller et helpers gérant l'ensemble de ces routes
+    - Création de tests pour l'ensemble des éléments de la gestion utilisateur
+  - Mise en place de tests unitaire : [non estimé, inclus dans la création de tests utilisateur]
+    - Mocha comme framework de test unitaire
+    - Supertest pour simuler des requêtes HTTP sur les routes
+  - Début de travail sur le système de rencontre instantanées [estimé à 1 jour, en cours]
+  - Tri sur les tickets git [réalisé en amont du projet]
 
 ---
 ### Hugo
