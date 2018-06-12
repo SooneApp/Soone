@@ -47,6 +47,9 @@ module.exports = {
             type: "string",
             columnType: "datetime"
         },
+        appToken: {
+            type: "ref"
+        }
     },
 };
 

@@ -1,3 +1,4 @@
+var admin = require("firebase-admin");
 var waitingList;
 
 function associate (user) {
@@ -15,35 +16,47 @@ function associate (user) {
     return result;
 }
 
-function queue(user,req) {
+function queue(user) {
     if(!waitingList) {
         waitingList = [user];
     } else {
         waitingList.push(user);
     }
+}
 
-    sails.sockets.join(req, user.id);
-    sails.sockets.broadcast(user.id, "associated", "Hello to all my fun sockets!");
+function sendMessage(message,target) {
+    message.token = target;
+    admin.messaging().send(message)
+        .then((response) => {
+            console.log('Successfully sent message:', response);
+        })
+        .catch((error) => {
+            console.log('Error sending message:', error);
+        });
 }
 
 module.exports = {
     register: async function (req, res) { 
-        if (!req.isSocket) {
-            return res.badRequest();
-        }
-
         var parameters = await sails.helpers.parseParameters.with({req});
         var user = await sails.helpers.user.getUser.with({id: parameters.id});
         var search = await sails.helpers.instantsearch.parseData.with(parameters);
         user = Object.assign(parameters, user);
-
         var association = associate(user);
 
         if(association) {
-            sails.sockets.join(req, association.id);
-            sails.sockets.broadcast("room", 'associated', { user1: association, user2: user });
+            var associationTokken = association.appToken;
+            var userTokken = user.appToken;
+
+            var message = {
+                data: {
+                    user1: JSON.stringify(await sails.helpers.user.sortUser.with({user: association})),
+                    user2: JSON.stringify(await sails.helpers.user.sortUser.with({user}))
+                }
+            };
+            sendMessage(message,associationTokken);
+            sendMessage(message,userTokken);
         } else {
-            queue(user,req);
+            queue(user);
         }
 
         res.ok();
