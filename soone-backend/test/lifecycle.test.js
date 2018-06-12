@@ -1,4 +1,5 @@
 var Sails = require('sails');
+var async = require("async");
 
 // Before running any tests...
 before(function (done) {
@@ -13,25 +14,44 @@ before(function (done) {
             return done(err);
         }
 
+        async.parallel({
+            createUsers: function(cb){
+                Sex.create({
+                    "id": 1,
+                    "label": "label"
+                })
+                .exec(function createCB(err, user) {
+                    sails.log('bootstrap.test.js Create default Service Admin user');
+                    cb();
+                });
+                }
+            },
+            function(err, results) {
+                User.create({
+                    "id": "d344d15f-0721-48cc-a113-a7243307e80",
+                    "name": "johndoe",
+                    "email": "johndoe@gmail.com",
+                    "birthDate": new Date('1995-12-17T03:24:00'),
+                    "phoneNumber": "0101010101",
+                    "sex": 1,
+                    "sexInterest": 100,
+                    "description": "Je chill dans mon canap trkl",
+                    "lastSeen": new Date('2017-12-17T03:24:00'),
+                    "accountType": 1,
+                    "deletedAt": ""
+                },done);
+            });
+        });
+
         // AccountType.create({
         //     "id": 4,
         //     "label" : "Admin"
         // });
+        /*Sex.create({
+            "id": 1,
+            "label": "label"
+        });*/
 
-        User.create({
-            "id": "d344d15f-0721-48cc-a113-a7243307e80",
-            "name": "johndoe",
-            "email": "johndoe@gmail.com",
-            "birthDate": new Date('1995-12-17T03:24:00'),
-            "phoneNumber": "0101010101",
-            "sex": 1,
-            "sexInterest": 2,
-            "description": "Je chill dans mon canap trkl",
-            "lastSeen": new Date('2017-12-17T03:24:00'),
-            "accountType": 1,
-            "deletedAt": ""
-        }, done);
-    });
 });
 
 after(function (done) {
