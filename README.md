@@ -128,3 +128,30 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
  -Suite HTTPS Sails.js
  - Correction FTP du serveur web
  - Recherche sur les VM fournis par l'école, soucis de pare feu interne et externe de l'école
+ 
+ ## Lundi 11 juin
+ 
+ ### Général
+ - Brainstorm sur les paramètres de recherche possible (pour les matchs)
+ 
+ ---
+ ### Scott
+ 
+ ---
+ ### Matthis
+    
+ ---
+ ### Nans
+ - Mise en place des connecteurs base de données mysql en prod [estimé à 2h , 1h passées aujourd'hui, 2h hier]
+ - Travail sur les utilisateurs :
+    - Créations des routes [estimé à 1h, 1h passée + temps Loic]
+    - Test des routes [estimé à 1h, 1h passée + temps Loic]
+ - Documentation base de données
+ ---
+ ### Loïc
+ 
+ ---
+ ### Hugo
+ 
+ ---
+ ### Germain
