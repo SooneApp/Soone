@@ -26,8 +26,15 @@ J'ai recuperé par le biai de Monsieur Pierre Richard, les accès aux différent
  - Mise en place de la base de donnée mysql et création des accès
  - Configuration initiale du firewall pfsence
 
+## Vendredi 01 juin
 
+### Journée Brainstorm
 
+Discussion sur le fonctionnement de l'application
+  - Définition des fonctionnalités
+  - Schématisation de l'architecture
+  - Tri du bac à sable
+  - Répartition des tâches
 
 ## Vendredi 08 juin
 
