@@ -18,5 +18,7 @@ module.exports.routes = {
   "PUT /api/user" : "UserController.update",
   "DELETE /api/user" : "UserController.delete",
   "POST /api/connect" : "UserController.connect",
-  "GET /api/disconnect" : "UserController.disconnect"
+  "GET /api/disconnect" : "UserController.disconnect",
+  //INSTANT SEARCH ROUTES
+  "POST /api/instantSearch" : "InstantSearchController.register"
 };

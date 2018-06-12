@@ -16,7 +16,7 @@ async function getUser(parameters, res) {
 
 module.exports = {
     add: async function (req, res) { 
-        var userVal = parseParameters(req);
+        var userVal = await sails.helpers.parseParameters.with({req});
 
         var user = await sails.helpers.user.addUser.with(userVal)
             .tolerate('alreadyExists', (err) => {
@@ -27,12 +27,12 @@ module.exports = {
         res.json(user);
     },
     get: async function (req, res) { 
-        var user = await getUser(parseParameters(req), res);
+        var user = await getUser(await sails.helpers.parseParameters.with({req}), res);
 
         res.json(user);
     },
     update: async function (req, res) {
-        var userVal = parseParameters(req);
+        var userVal = await sails.helpers.parseParameters.with({req});
         var user = await sails.helpers.user.updateUser.with(userVal);
         res.json(user);
     },
@@ -42,7 +42,7 @@ module.exports = {
         });
     },
     connect: async function (req, res) {
-        var user = await getUser(parseParameters(req), res);
+        var user = await getUser(await sails.helpers.parseParameters.with({req}), res);
         req.session.userId = user.id;
         res.json(user);
     }
