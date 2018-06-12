@@ -152,6 +152,15 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
  
  ---
  ### Hugo
- 
+Objectif de la journée : Finir de reparer les problèmes liès à la base de donnée, chercher et mettre en place un système de notifications sms.
+Objectif atteint avec un reste à faire pour le lendemain.
+
+- Reparation des problemes de base de donnée ( 2 heures ) 
+- Mise en place de l'infrastructure d'envoie de SMS (estimée 1 jour, réalisée en 1 jour)
+  - Chercher une solution peu couteuse et efficace -> AWS SNS
+  - Integrer les fonctionnalités au projet
+  - Faire les premiers tests relatifs à l'envoie de sms
+  - Reste à faire : Mettre à jour la base de données, le modèle et les controlleurs pour journaliser les événements d'envoies de sms.
+   - Les developpeurs sont occupés sur d'autres partie de l'application, c'est pourquoi je vais m'en occuper.
  ---
  ### Germain
