@@ -56,12 +56,12 @@ Objectif atteint
 
 - Mise en place d'un serveur pour heberger le site vitrine + accès FTP
 - Recherche d'une solution de sécurisation connexion HTTPS client<->serveur sur l'application Sails.js du serveur de prod
-- 
+
 
 ## Lundi 11 juin
 
 ### Général
--Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, diffcultés rencontrées et objectifs de la journée
+- Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, difficultés rencontrées et objectifs de la journée. Réunions animées par Germain.
 
 ---
 ### Matthis
@@ -87,4 +87,4 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
 - Lecture de la documentation de pfsence -> L'objectif est de faire passer le traffic des serveurs de pro/preprod via le firewall pfsense.
 ---
 ### Germain
- -
+ - 
