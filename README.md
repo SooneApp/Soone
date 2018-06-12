@@ -149,7 +149,15 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
  - Documentation base de données
  ---
  ### Loïc
- 
+  - Travail sur le système de recherche instantannées : (en cours) [estimé à 1 jour, rééstimé à 1 jour et 1/2 suite à l'ajout de Firebase]
+    - Création d'une route d'enregistrement et d'un système de socket pour communiquer avec le client
+    - Création de tests unitaires sur le système de sockets
+    - Le système de socket serait cependant incompatible avec Android
+  - Travail sur l'intégration de Firebase dans l'application : (terminé) [non estimé, 2h + réalisé en amont du projet]
+    - Installation du module et configuration du projet
+    - Lancement automatique du module lorsque le serveur est lancé
+    - Remplacement des intéractions socket par des messages Firebase
+    - Mise à jour des utilisateurs pour stocker et gérer leurs identifiants Firebase
  ---
  ### Hugo
 Objectif de la journée : Finir de reparer les problèmes liès à la base de donnée, chercher et mettre en place un système de notifications sms.
