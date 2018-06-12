@@ -106,6 +106,9 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
   - Installation d'Elasticksearch, Kibana
   - Configuration de l'application Sailsjs avec le serveur APM
 - Lecture de la documentation de pfsence -> L'objectif est de faire passer le traffic des serveurs de pro/preprod via le firewall pfsense.
+
+Suite aux performances faibles et au non fonctionnement des VMs fournies par l'école, nous avons décidé de louer un serveur OVH pour le serveur principale de production, et d'utiliser nos serveurs personnels pour la pre-prod. 
+J'ai passé l'après midi a migrer et reinstaller la configuration sur le nouveau serveur.
 ---
 ### Germain
  - 
