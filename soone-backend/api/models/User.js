@@ -28,10 +28,10 @@ module.exports = {
             columnType: "datetime",
         },
         sex: {
-            type: "number",
+            model: "sex",
         },
         sexInterest: {
-            type: "number"
+            model: "sexinterest"
         },
         description: {
             type: "string"
