@@ -25,7 +25,7 @@ module.exports = {
             required: true,
         },
         date: {
-            type: "string",
+            type: "ref",
             columnType: "datetime"
         },
         active: {
