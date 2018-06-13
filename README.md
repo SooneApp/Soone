@@ -31,6 +31,9 @@ J'ai recuperé par le biai de Monsieur Pierre Richard, les accès aux différent
 
 ## Vendredi 08 juin
 
+### Scott
+   - Suite à une reinstallation de MacOs sur ma machine j'ai passé la journée à la reconfigurer.
+
 ---
 ### Matthis
    - Installation de l'environnement de travail et mise en place de l'IDE
@@ -66,8 +69,14 @@ Objectif atteint
 ## Lundi 11 juin
 
 ### Général
--Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, diffcultés rencontrées et objectifs de la journée
--Brainstorm sur différentes parties clés de l'application (notemment le système de match instantané)
+
+   - Mise en place de stand up meeting tous les matins 9h15 pour faire le point sur tâches réalisées, diffcultés rencontrées et objectifs de la journée
+   - Brainstorm sur différentes parties clés de l'application (notemment le système de match instantané)
+
+---
+
+### Scott
+   - Création de l'écran de profil utilisateur.
 
 ---
 ### Matthis
@@ -109,6 +118,7 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
 
 Suite aux performances faibles et au non fonctionnement des VMs fournies par l'école, nous avons décidé de louer un serveur OVH pour le serveur principale de production, et d'utiliser nos serveurs personnels pour la pre-prod. 
 J'ai passé l'après midi a migrer et reinstaller la configuration sur le nouveau serveur.
+
 ---
 ### Germain
  - 

@@ -24,7 +24,7 @@ module.exports = {
             required: true
         },
         birthDate: {
-            type: "string",
+            type: "ref",
             columnType: "datetime",
         },
         sex: {
@@ -37,14 +37,14 @@ module.exports = {
             type: "string"
         },
         lastSeen: {
-            type: "string",
+            type: "ref",
             columnType: "datetime"
         },
         accountType: {
             model: "accounttype",
         },
         deletedAt: {
-            type: "string",
+            type: "ref",
             columnType: "datetime"
         },
     },
