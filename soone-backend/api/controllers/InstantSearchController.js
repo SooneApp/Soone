@@ -1,7 +1,7 @@
 var admin = require("firebase-admin");
 var waitingList;
 
-async function associate (user) {
+function associate (user) {
     var result = false;
 
     if(typeof waitingList != "undefined")
@@ -18,15 +18,15 @@ async function associate (user) {
     return result;
 }
 
-async function match(user,matched) {
-    var age = await sails.helpers.user.getAge.with({birthDate: matched.birthDate});
+function match(user,matched) {
+    var age = sails.helpers.user.getAge.with({birthDate: matched.birthDate});
     var result = false;
 
     var check = 
         matched.city == user.city &&
         user.ageRange[0] <= age &&
         user.ageRange[1] >= age &&
-        user.sexInterests.indexOf(matched.sex) != -1
+        user.sexInterests.indexOf(matched.sex) != -1;
     if(check) {
         result = true;
     }
@@ -41,18 +41,12 @@ function queue(user) {
         waitingList.push(user);
     }
 
-    sails.log(user.name + "registered to instant search");
+    sails.log(user.name + " queued to instant search");
 }
 
 function sendMessage(message,target) {
     message.token = target;
-    admin.messaging().send(message)
-        .then((response) => {
-            console.log('Successfully sent message:', response);
-        })
-        .catch((error) => {
-            console.log('Error sending message:', error);
-        });
+    return admin.messaging().send(message);
 }
 
 module.exports = {

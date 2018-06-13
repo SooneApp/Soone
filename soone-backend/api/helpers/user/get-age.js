@@ -1,4 +1,6 @@
 module.exports = {
+    sync: true,
+
     friendlyName: "Get age",
 
     description: "Return the age of the user, calculated from his birthday",
@@ -16,7 +18,7 @@ module.exports = {
         }
     },
 
-    fn: async function (inputs, exits) {
+    fn: function (inputs, exits) {
         var ageDifMs = Date.now() - new Date(inputs.birthDate).getTime();
         var ageDate = new Date(ageDifMs);
 
