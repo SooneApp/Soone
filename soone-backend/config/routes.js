@@ -9,15 +9,19 @@
  */
 
 module.exports.routes = {
-  '/': {
-    view: 'index'
-  },
-  //USER ROUTES
-  "GET /api/user" : "UserController.get",
-  "POST /api/user" : "UserController.add",
-  "PUT /api/user" : "UserController.update",
-  "POST /api/connect" : "UserController.connect",
-  "GET /api/disconnect" : "UserController.disconnect",
-  //SMS ROUTES
-  "POST /api/sms/advertising" : "SmsController.sendAdvertismentSms"
+    '/': {
+        view: 'index'
+    },
+    //USER ROUTES
+    "GET /api/user": "UserController.get",
+    "POST /api/user": "UserController.add",
+    "PUT /api/user": "UserController.update",
+    "POST /api/connect": "UserController.connect",
+    "GET /api/disconnect": "UserController.disconnect",
+    //Match decision ROUTES
+    "GET /api/matchDecision": "DecisionController.get",
+    "POST /api/matchDecision": "DecisionController.add",
+    "PUT /api/matchDecision": "DecisionController.update",
+    //SMS ROUTES
+    "POST /api/sms/advertising": "SmsController.sendAdvertismentSms"
 };

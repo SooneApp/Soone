@@ -24,7 +24,7 @@ module.exports = {
             columnType: "varchar(36)",
             required: true,
         },
-        active: {
+        decision: {
             type: "boolean",
         },
     },
