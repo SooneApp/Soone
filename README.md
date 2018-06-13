@@ -6,22 +6,22 @@
 
 #### Initialisation du projet et reprise du travail déjà effectué ~1h30
 
-J’ai créé une [organisation](https://github.com/SooneApp) sur **Github** afin que l’on ait nos répertoires centralisés. Cela facilitera le lien entre les différents répertoires, actuellement un pour le *back-end* et un pour le *front-end (Android)*, et les issues crée précédemment sur un répertoire personnel.
+J’ai créé une [organisation](https://github.com/SooneApp) sur **Github** afin que l’on ait nos répertoires centralisés. Cela facilitera le lien entre les différents répertoires, actuellement un pour le *back-end* et un pour le *front-end (Android)*, et les issues créées précédemment sur un répertoire personnel.
 
 J’ai importé ce répertoire personnel dans l’organisation, car celui-ci contenait toutes les tâches que nous avions créées lors de la précédente période en école.
 
-Une fois ce répertoire importer, dans l’organisation, avec les tâches j’ai créé 3 projets différents et ai réparti l’ensemble des tâches dans ceux-ci :
+Une fois ce répertoire importé, dans l’organisation, avec les tâches j’ai créé 3 projets différents et ai réparti l’ensemble des tâches dans ceux-ci :
  - [Back-End](https://github.com/orgs/SooneApp/projects/3): Composée de 43 tâches.
  - [Front-End](https://github.com/orgs/SooneApp/projects/2): Composée de 26 tâches.
- - [Database](https://github.com/orgs/SooneApp/projects/4): Composée de 3 tâches.
+
 #### Initialisation du projet Android [#1](https://github.com/SooneApp/Soone-Android-App/issues/1) ~3h
 
 Pour l’initialisation du projet de l’application Android j’ai repris la base d’une application open source personnel afin de garder mes marques et pouvoir implémenter plus rapidement les différentes fonctionnalités qu’il y aura à réaliser.
 ### Hugo
 
-#### Recuperation des serveurs ( 3 heures )
+#### Recuperation des serveurs ~3 heures
 
-J'ai recuperé par le biai de Monsieur Pierre Richard, les accès aux différentes VM que nous utiliserons pour le projet. 
+J'ai recuperé par le biais de Monsieur Pierre Richard, les accès aux différentes VM que nous utiliserons pour le projet. 
 
  - Mise en place de la base de donnée mysql et création des accès
  - Configuration initiale du firewall pfsence
@@ -72,6 +72,7 @@ Objectif atteint
 - Mise en place d'un serveur pour heberger le site vitrine + accès FTP
 - Recherche d'une solution de sécurisation connexion HTTPS client<->serveur sur l'application Sails.js du serveur de prod
 
+---
 
 ## Lundi 11 juin
 
@@ -126,7 +127,7 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
 - Suite aux performances faibles et au non fonctionnement des VMs fournies par l'école, nous avons décidé de louer un serveur OVH pour le serveur principale de production, et d'utiliser nos serveurs personnels pour la pre-prod. J'ai passé l'après midi a migrer et reinstaller la configuration sur le nouveau serveur.
 ---
 ### Germain
- -Suite HTTPS Sails.js
+ - Suite HTTPS Sails.js
  - Correction FTP du serveur web
  - Recherche sur les VM fournies par l'école, soucis de pare feu interne et externe de l'école
  
@@ -201,5 +202,7 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ### Hugo
   ---
   ### Germain
-   
+   - Ajout redirection HTTP vers HTTPS
+   - Recherche de solutions certificats mieux que certificats autosignés
+  ---
  
