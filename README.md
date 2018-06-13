@@ -87,7 +87,7 @@ Objectif atteint
 
 ---
 ### Matthis
-   - 
+   - Développement site vitrine (http://soone.fun/) [estimé à 1j, pas encore terminé]
    
 ---
 ### Nans
@@ -139,7 +139,7 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
  
  ---
  ### Matthis
-    
+  - Développement site vitrine (http://soone.fun/) [estimé à 1j, réalisé en 2j]
  ---
  ### Nans
  - Mise en place des connecteurs base de données mysql en prod [estimé à 2h , 1h passées aujourd'hui, 2h hier]
