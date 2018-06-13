@@ -20,7 +20,7 @@
  *   https://sailsjs.com/anatomy/app.js
  */
 
-
+/*
 // Add this to the VERY top of the first file loaded in your app
 var apm = require('elastic-apm-node').start({
   // Set required service name (allowed characters: a-z, A-Z, 0-9, -, _, and space)
@@ -32,7 +32,7 @@ var apm = require('elastic-apm-node').start({
   // Set custom APM Server URL (default: http://localhost:8200)
   serverUrl: '',
 })
-
+*/
 
 
 // Ensure we're in the project directory, so cwd-relative paths work as expected

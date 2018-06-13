@@ -337,7 +337,7 @@ module.exports = {
   * this, just try deploying without setting it and see if it works.)       *
   *                                                                         *
   ***************************************************************************/
-   port: 80,
+   port: 1337,
 
 
 
@@ -358,7 +358,11 @@ module.exports = {
   * > https://sailsjs.com/config/*#?sailsconfigssl                          *
   *                                                                         *
   **************************************************************************/
-  
+ssl: {
+	ca: require('fs').readFileSync('/etc/letsencrypt/csr/0001_csr-certbot.pem'),
+	key: require('fs').readFileSync('/etc/letsencrypt/keys/0001_key-certbot.pem'),
+	cert: require('fs').readFileSync('/etc/letsencrypt/live/soone.fun/fullchain.pem')
+},
 
 
 
