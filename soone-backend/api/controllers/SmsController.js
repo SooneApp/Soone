@@ -36,6 +36,8 @@ module.exports = {
     sendRegisterCode: async function (req,res){
       var userVal = parseParameters(req);
 
+
+
       code = getRandomInt(9999);
       user = {phoneNumber: userVal.phoneNumber, code: code}
       var picked = waitingUsers.find(o => o.phoneNumber === userVal.phoneNumber);
