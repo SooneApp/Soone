@@ -17,5 +17,8 @@ module.exports.routes = {
   "POST /api/user" : "UserController.add",
   "PUT /api/user" : "UserController.update",
   "POST /api/connect" : "UserController.connect",
-  "GET /api/disconnect" : "UserController.disconnect"
+  "GET /api/disconnect" : "UserController.disconnect",
+  //SMS ROUTES
+  "POST /api/sms/advertising" : "SmsController.sendAdvertismentSms",
+  "POST /api/sms/register" : "SmsController.sendRegisterCode"
 };
