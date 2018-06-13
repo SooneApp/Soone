@@ -142,11 +142,13 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
   - Fin du développement site vitrine (http://soone.fun/) [estimé à 1j, réalisé en 2j]
  ---
  ### Nans
- - Mise en place des connecteurs base de données mysql en prod [estimé à 2h , 1h passées aujourd'hui, 2h hier]
+ - Mise en place des connecteurs base de données mysql en prod [estimé à 2h , 2h passées aujourd'hui, 2h hier]
  - Travail sur les utilisateurs :
     - Créations des routes [estimé à 1h, 1h passée + temps Loic]
     - Test des routes [estimé à 1h, 1h passée + temps Loic]
- - Documentation base de données
+ - Documentation base de données [1h passée]
+ - Résolution problème de GIT [1h passée]
+ - Ajout de relations dans les models [2h passé]
  ---
  ### Loïc
   - Travail sur le système de recherche instantannées : (en cours) [estimé à 1 jour, rééstimé à 1 jour et 1/2 suite à l'ajout de Firebase]
@@ -175,3 +177,25 @@ Objectif atteint avec un reste à faire pour le lendemain.
   - Mise en place du serveur de mail afin d'avoir une addresse mail de contact disponible avec comme nom de domaine celui du projet
   - Tests de fonctionnement sécurisation serveur, reste redirection HTTP vers HTTPS sur Sails.js
   
+ ## Mercredi 13 juin
+ 
+  ### Général
+  - Problème aws
+  
+  ---
+  ### Scott
+  
+  ---
+  ### Matthis
+  ---
+  ### Nans
+  - Problème de date entre   [3h passées aujourd'hui]
+  
+  ---
+  ### Loïc
+  ---
+  ### Hugo
+  ---
+  ### Germain
+   
+ 
