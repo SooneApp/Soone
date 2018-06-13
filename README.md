@@ -192,6 +192,7 @@ Objectif atteint avec un reste à faire pour le lendemain.
    - Déploiement en prod du site.
    - Mise à jour des coleurs et images du site.
    - Tentative d'integration des SMS pour télécharger l'application.
+   - Pair programming avec Nans.
   ---
   ### Nans
    - Problème de date entre le code et la base de données [3h passées aujourd'hui]
