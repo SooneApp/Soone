@@ -196,6 +196,7 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ---
   ### Nans
    - Problème de date entre le code et la base de données [3h passées aujourd'hui]
+   - Création des controleurs et des routes des match, ainsi que des décision des matchs [4h passées aujourd'hui]
   
   ---
   ### Loïc
