@@ -18,7 +18,7 @@ module.exports = {
     add: async function (req, res) { 
         var matchVal = parseParameters(req);
 
-        var match = await sails.helpers.match.addDecision.with(matchVal)
+        var match = await sails.helpers.match.addMatch.with(matchVal)
             .tolerate('alreadyExists', (err) => {
                 res.status(409);
                 return err;
@@ -33,8 +33,8 @@ module.exports = {
     },
     update: async function (req, res) {
         var matchVal = parseParameters(req);
-        var matchDecision = await sails.helpers.decision.updateDecision.with(matchVal);
-        res.json(matchDecision);
+        var match = await sails.helpers.match.updateMatch.with(matchVal);
+        res.json(match);
     }
 };
 

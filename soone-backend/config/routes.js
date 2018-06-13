@@ -18,6 +18,10 @@ module.exports.routes = {
     "PUT /api/user": "UserController.update",
     "POST /api/connect": "UserController.connect",
     "GET /api/disconnect": "UserController.disconnect",
+    //Match  ROUTES
+    "GET /api/match": "MatchController.get",
+    "POST /api/match": "MatchController.add",
+    "PUT /api/match": "MatchController.update",
     //Match decision ROUTES
     "GET /api/matchDecision": "DecisionController.get",
     "POST /api/matchDecision": "DecisionController.add",
