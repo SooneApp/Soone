@@ -16,9 +16,10 @@ module.exports.routes = {
   "GET /api/user" : "UserController.get",
   "POST /api/user" : "UserController.add",
   "PUT /api/user" : "UserController.update",
-  "DELETE /api/user" : "UserController.delete",
   "POST /api/connect" : "UserController.connect",
   "GET /api/disconnect" : "UserController.disconnect",
   //INSTANT SEARCH ROUTES
-  "POST /api/instantSearch" : "InstantSearchController.register"
+  "POST /api/instantSearch" : "InstantSearchController.register",
+  //SMS ROUTES
+  "POST /api/sms/advertising" : "SmsController.sendAdvertismentSms"
 };
