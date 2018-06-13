@@ -87,6 +87,7 @@ Objectif atteint
 
 ---
 ### Matthis
+   - Conception du site vitrine.
    - Développement du site vitrine (http://soone.fun/) [estimé à 1j, pas encore terminé]
    
 ---
@@ -187,9 +188,12 @@ Objectif atteint avec un reste à faire pour le lendemain.
   
   ---
   ### Matthis
+   - Déploiement en prod du site.
+   - Mise à jour des coleurs et images du site.
+   - Tentative d'integration des SMS pour télécharger l'application.
   ---
   ### Nans
-  - Problème de date entre le code et la base de données [3h passées aujourd'hui]
+   - Problème de date entre le code et la base de données [3h passées aujourd'hui]
   
   ---
   ### Loïc
