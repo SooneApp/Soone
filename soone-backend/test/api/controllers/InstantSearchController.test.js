@@ -1,12 +1,9 @@
 var supertest = require('supertest');
-var agent = supertest.agent;
 var assert = require("assert");
-var auth;
 var rewire = require('rewire');
 var app = rewire('../../../api/controllers/InstantSearchController.js');
 
 queue = app.__get__('queue'); 
-sendMessage = app.__get__('sendMessage');
 match_ = app.__get__('match');
 associate = app.__get__('associate');
 
@@ -26,23 +23,6 @@ describe('UserController.queue', function () {
                 queue(user);
                 assert.deepEqual(app.__get__("waitingList"), [user,user]);
 
-                done();
-            });
-        });
-    });
-});
-
-describe('UserController.sendMessage', function () {
-    describe('send message', function () {
-        it('it should send the message', function (done) {
-            var message = {
-                data: {
-                    message: "empty message"
-                }
-            }
-            var token = "epPhPUc4kbc:APA91bHmZEHVe9FyXrJP_H110dI6EQW4rFjKftArp-7VprsEadGayeo411BwYEuPwH1OuHpjLatIOAaN77QClv-cQTd0FsDHos8EYSueXzBFKX14K3loiqpxscOLthm-LPtzw4H1KrFM";
-            sendMessage(message,token)        
-            .then((response) => {
                 done();
             });
         });

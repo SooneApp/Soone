@@ -41,7 +41,7 @@ describe('UserController.get', function () {
         it('should return an error 500 because the user doesn t exists', function (done) {
             supertest(sails.hooks.http.app)
                 .get("/api/user")
-                .query({id: "d344d15f-0721-48cc-a113-a7243307e81"})
+                .query({id: "d344d15f-0721-48cc-a113-a7243307eXX"})
                 .expect(500, done);
         });
     });

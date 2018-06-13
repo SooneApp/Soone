@@ -10,6 +10,7 @@ function associate (user) {
             if(match(user,waitingList[element]) && match(waitingList[element],user)) {
                 result = waitingList[element];
                 waitingList.splice(element,1);
+                sails.log(result.name + " removed from instant search");
                 break;
             }
         }

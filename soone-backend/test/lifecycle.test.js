@@ -13,6 +13,8 @@ before(function (done) {
             return done(err);
         }
 
+        var token = "APP_TOKEN_HERE";
+
         User.createEach([
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e80",
@@ -25,7 +27,8 @@ before(function (done) {
                 "description": "Je chill dans mon canap trkl",
                 "lastSeen": new Date('2017-12-17T03:24:00'),
                 "accountType": 1,
-                "deletedAt": ""
+                "deletedAt": "",
+                "appToken": token
             },
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e81",
@@ -38,7 +41,8 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2018-05-17T03:24:00'),
                 "accountType": 1,
-                "deletedAt": ""
+                "deletedAt": "",
+                "appToken": token
             },
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e82",
@@ -51,7 +55,8 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2018-02-13T03:24:00'),
                 "accountType": 1,
-                "deletedAt": ""
+                "deletedAt": "",
+                "appToken": token
             },
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e79",
@@ -64,7 +69,8 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2015-07-20T03:24:00'),
                 "accountType": 1,
-                "deletedAt": ""
+                "deletedAt": "",
+                "appToken": token
             },
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e83",
@@ -77,7 +83,8 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2018-01-20T03:24:00'),
                 "accountType": 1,
-                "deletedAt": ""
+                "deletedAt": "",
+                "appToken": token
             },
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e84",
@@ -90,7 +97,8 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2018-01-21T03:24:00'),
                 "accountType": 1,
-                "deletedAt": ""
+                "deletedAt": "",
+                "appToken": token
             }])
             .exec(function createCB(err, user) {
                 done();
