@@ -29,9 +29,9 @@ module.exports = {
             description: 'The sex',
             type: 'number'
         },
-        sexInterest: {
+        sexInterests: {
             description: 'The sex interest',
-            type: 'number'
+            type: 'json'
         },
         description: {
             description: 'The description',

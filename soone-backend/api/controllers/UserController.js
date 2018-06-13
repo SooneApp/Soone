@@ -34,7 +34,7 @@ module.exports = {
     update: async function (req, res) {
         var userVal = await sails.helpers.parseParameters.with({req});
         var user = await sails.helpers.user.updateUser.with(userVal);
-        res.json(user);
+        res.json(await sails.helpers.user.sortUser.with({user}));
     },
     disconnect: async function (req, res) {
         req.session.destroy(function(err) {
@@ -46,7 +46,6 @@ module.exports = {
         var user = await getUser({ phoneNumber: parameters.phoneNumber });
         await sails.helpers.user.connectUser.with({ id: user.id, appToken: parameters.appToken });
         user = await getUser({ phoneNumber: parameters.phoneNumber });
-
         req.session.userId = user.id;
         res.json(await sails.helpers.user.sortUser.with({user}));
     }

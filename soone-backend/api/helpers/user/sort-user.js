@@ -22,7 +22,10 @@ module.exports = {
         delete inputs.user.createdAt;
         delete inputs.user.updatedAt;
         delete inputs.user.deletedAt;
+        delete inputs.user.phoneNumber;
         
+        await sails.helpers.user.parseData.with({ user: inputs.user });
+
         return exits.success(inputs.user);
     }
 };

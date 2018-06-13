@@ -1,16 +1,34 @@
 var admin = require("firebase-admin");
 var waitingList;
 
-function associate (user) {
+async function associate (user) {
     var result = false;
 
     if(typeof waitingList != "undefined")
     {
-        waitingList.forEach(element => {
-            if(element.city == user.city) {
-                result = element;
+        for (var element in waitingList) {
+            if(match(user,waitingList[element]) && match(waitingList[element],user)) {
+                result = waitingList[element];
+                waitingList.splice(element,1);
+                break;
             }
-        });
+        }
+    }
+
+    return result;
+}
+
+async function match(user,matched) {
+    var age = await sails.helpers.user.getAge.with({birthDate: matched.birthDate});
+    var result = false;
+
+    var check = 
+        matched.city == user.city &&
+        user.ageRange[0] <= age &&
+        user.ageRange[1] >= age &&
+        user.sexInterests.indexOf(matched.sex) != -1
+    if(check) {
+        result = true;
     }
 
     return result;
@@ -22,6 +40,8 @@ function queue(user) {
     } else {
         waitingList.push(user);
     }
+
+    sails.log(user.name + "registered to instant search");
 }
 
 function sendMessage(message,target) {
@@ -39,10 +59,10 @@ module.exports = {
     register: async function (req, res) { 
         var parameters = await sails.helpers.parseParameters.with({req});
         var user = await sails.helpers.user.getUser.with({id: parameters.id});
-        var search = await sails.helpers.instantsearch.parseData.with(parameters);
         user = Object.assign(parameters, user);
-        var association = associate(user);
+        user = await sails.helpers.user.parseData.with({user});
 
+        var association = await associate(user);
         if(association) {
             var associationTokken = association.appToken;
             var userTokken = user.appToken;
