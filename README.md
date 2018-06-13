@@ -61,7 +61,7 @@ Discussion sur le fonctionnement de l'application
 ### Hugo
 Objectif de la journée : Mettre en place tout le nécéssaire au niveau du serveur pour que l'équipe de developpement puisse commencer à travailler.
 Objectif atteint 
-- Installation du serveur de production ( Estimation : 1 journée, réalisé en 1 journée )
+- Installation du serveur de production [estimé à 1 jour, réalisé en 1 jour]
   - Installation des dépendances éssentielles
   - Installation et configuration de base de NodeJS
   - Installation et configuration de base de l'application SailsJS
@@ -119,7 +119,7 @@ Objectif atteint
 Objectif de la journée : Mettre en place une suite de monitoring permettant d'avoir des statistiques sur l'utilisation de l'API sailsjs.
 Les statistiques sont importantes pour debuguer l'appliquation et comprendre les comportements utilisateurs.
 
-- Installation de la suite statistique ( Estimation : 1 journée, réalisé en 1/2 journée )
+- Installation de la suite statistique [estimé à 1 jour, réalisé en 1/2 jour]
   - Installation du serveur APM
   - Installation d'Elasticksearch, Kibana
   - Configuration de l'application Sailsjs avec le serveur APM
@@ -168,7 +168,7 @@ Objectif de la journée : Finir de reparer les problèmes liès à la base de do
 Objectif atteint avec un reste à faire pour le lendemain.
 
 - Reparation des problemes de base de donnée ( 2 heures ) 
-- Mise en place de l'infrastructure d'envoie de SMS (estimée 1 jour, réalisée en 1 jour)
+- Mise en place de l'infrastructure d'envoie de SMS [estimé à 1 jour, réalisé en 1 jour]
   - Chercher une solution peu couteuse et efficace -> AWS SNS
   - Integrer les fonctionnalités au projet
   - Faire les premiers tests relatifs à l'envoie de sms
