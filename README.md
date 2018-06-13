@@ -189,7 +189,7 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ### Matthis
   ---
   ### Nans
-  - Problème de date entre   [3h passées aujourd'hui]
+  - Problème de date entre le code et la base de données [3h passées aujourd'hui]
   
   ---
   ### Loïc
