@@ -127,9 +127,9 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
 ### Germain
  -Suite HTTPS Sails.js
  - Correction FTP du serveur web
- - Recherche sur les VM fournis par l'école, soucis de pare feu interne et externe de l'école
+ - Recherche sur les VM fournies par l'école, soucis de pare feu interne et externe de l'école
  
- ## Lundi 11 juin
+ ## Mardi 12 juin
  
  ### Général
  - Brainstorm sur les paramètres de recherche possible (pour les matchs)
@@ -172,3 +172,6 @@ Objectif atteint avec un reste à faire pour le lendemain.
    - Les developpeurs sont occupés sur d'autres partie de l'application, c'est pourquoi je vais m'en occuper.
  ---
  ### Germain
+  - Mise en place du serveur de mail afin d'avoir une addresse mail de contact disponible avec comme nom de domaine celui du projet
+  - Tests de fonctionnement sécurisation serveur, reste redirection HTTP vers HTTPS sur Sails.js
+  
