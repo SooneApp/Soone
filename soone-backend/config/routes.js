@@ -18,6 +18,8 @@ module.exports.routes = {
   "PUT /api/user" : "UserController.update",
   "POST /api/connect" : "UserController.connect",
   "GET /api/disconnect" : "UserController.disconnect",
+  //INSTANT SEARCH ROUTES
+  "POST /api/instantSearch" : "InstantSearchController.register",
   //SMS ROUTES
   "POST /api/sms/advertising" : "SmsController.sendAdvertismentSms"
 };

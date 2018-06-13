@@ -8,3 +8,5 @@
 \.idea/vcs\.xml
 
 \.idea/workspace\.xml
+
+/soone-backend/assets/firebase/serviceAccountKey.json
