@@ -190,7 +190,7 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ---
   ### Matthis
    - Déploiement en prod du site.
-   - Mise à jour des coleurs et images du site.
+   - Mise à jour des couleurs et images du site.
    - Tentative d'integration des SMS pour télécharger l'application.
    - Pair programming avec Nans.
   ---
@@ -200,6 +200,14 @@ Objectif atteint avec un reste à faire pour le lendemain.
   
   ---
   ### Loïc
+  - Travail sur le système de recherche instantannées : (terminé) [estimé à 1 jour et demi, terminé en 2 jours]
+    - Evolution du modèle de base de données pour supporter plus efficacement les genres et préférences de recherche
+    - Ajout des critères de matching au système de recherche instantannées
+    - Réalisation de tests manuels (longs et inefficaces) pour valider le comportement
+    - Suite aux tests jugés non pertinents, j'ai mis en place une stratégie de tests jugée plus pertinente :
+      - Exposition des fonctionnalités du controller grâce au module rewire
+      - Réalisation de tests unitaires sur l'ensemble des méthodes exposées du controller
+      - Réalisation de tests semi automatisés (requérant une intervention) afin de valider la récéption des données sur une application android
   ---
   ### Hugo
   ---
