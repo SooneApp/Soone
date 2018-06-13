@@ -52,11 +52,11 @@ Discussion sur le fonctionnement de l'application
 
 ---
 ### Loïc
-    - Création d'une installation NodeJS et SailsJS [estimé à 1 jour, réalisé en 1/2 jour]
-    - Mise à jour de l'organisation projet back-end : [réalisé en amont du projet]
-      - Redéfinition des tâches suite au brainstorm
-      - Ajout de descriptions pour l'ensemble des tâches
-    - Début de travail sur la gestion utilisateur (model, route, controller & helper) [estimé à 1 jour, en cours]
+   - Création d'une installation NodeJS et SailsJS [estimé à 1 jour, réalisé en 1/2 jour]
+   - Mise à jour de l'organisation projet back-end : [réalisé en amont du projet]
+     - Redéfinition des tâches suite au brainstorm
+     - Ajout de descriptions pour l'ensemble des tâches
+   - Début de travail sur la gestion utilisateur (model, route, controller & helper) [estimé à 1 jour, en cours]
 ---
 ### Hugo
 Objectif de la journée : Mettre en place tout le nécéssaire au niveau du serveur pour que l'équipe de developpement puisse commencer à travailler.
@@ -87,7 +87,7 @@ Objectif atteint
 
 ---
 ### Matthis
-   - Développement site vitrine (http://soone.fun/) [estimé à 1j, pas encore terminé]
+   - Développement du site vitrine (http://soone.fun/) [estimé à 1j, pas encore terminé]
    
 ---
 ### Nans
@@ -139,7 +139,7 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
  
  ---
  ### Matthis
-  - Développement site vitrine (http://soone.fun/) [estimé à 1j, réalisé en 2j]
+  - Fin du développement site vitrine (http://soone.fun/) [estimé à 1j, réalisé en 2j]
  ---
  ### Nans
  - Mise en place des connecteurs base de données mysql en prod [estimé à 2h , 1h passées aujourd'hui, 2h hier]
