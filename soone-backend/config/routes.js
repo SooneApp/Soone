@@ -9,26 +9,24 @@
  */
 
 module.exports.routes = {
-  '/': {
-    view: 'index'
-  },
-  //USER ROUTES
-  "GET /api/user" : "UserController.get",
-  "POST /api/user" : "UserController.add",
-  "PUT /api/user" : "UserController.update",
-  "POST /api/connect" : "UserController.connect",
-  "GET /api/disconnect" : "UserController.disconnect",
-  //INSTANT SEARCH ROUTES
-  "POST /api/instantSearch" : "InstantSearchController.register",
+    '/': {
+        view: 'index'
+    },
+    //USER ROUTES
+    "GET /api/user": "UserController.get",
+    "POST /api/user": "UserController.add",
+    "PUT /api/user": "UserController.update",
+    "POST /api/connect": "UserController.connect",
+    "GET /api/disconnect": "UserController.disconnect",
+    //INSTANT SEARCH ROUTES
+    "POST /api/instantSearch": "InstantSearchController.register",
     //Match  ROUTES
-    "GET /api/match": "MatchController.get",
-    "POST /api/match": "MatchController.add",
-    "PUT /api/match": "MatchController.update",
+    "GET /api/chat": "ChatController.get",
+    "POST /api/chat": "ChatController.add",
     //Match decision ROUTES
     "GET /api/matchDecision": "DecisionController.get",
-    "POST /api/matchDecision": "DecisionController.add",
     "PUT /api/matchDecision": "DecisionController.update",
 
     //SMS ROUTES
-  "POST /api/sms/advertising" : "SmsController.sendAdvertismentSms"
+    "POST /api/sms/advertising": "SmsController.sendAdvertismentSms"
 };

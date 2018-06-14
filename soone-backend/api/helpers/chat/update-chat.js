@@ -12,6 +12,7 @@ module.exports = {
         active: {
             description: 'The fact that the match is active or not',
             type: 'boolean',
+            required: true
         },
     },
 

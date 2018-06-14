@@ -1,5 +1,5 @@
 /**
- * TimedChat.js
+ * Decision.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -14,21 +14,18 @@ module.exports = {
             required: true,
             unique: true
         },
-        idUser1: {
+        idMatch: {
             type: "string",
             columnType: "varchar(36)",
             required: true,
-            unique: true
         },
-        idUser2: {
+        idUser: {
             type: "string",
             columnType: "varchar(36)",
             required: true,
-            unique: true
         },
-        startDate: {
-            type: "string",
-            columnType: "datetime"
+        decision: {
+            type: "boolean",
         },
     },
 

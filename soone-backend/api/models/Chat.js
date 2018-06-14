@@ -14,17 +14,30 @@ module.exports = {
             required: true,
             unique: true
         },
-        idUser1: {
-            type: "string",
-            columnType: "varchar(36)",
-            required: true,
-            unique: true
+        startDate: {
+            type: "ref",
+            columnType: "datetime"
         },
-        idUser2: {
+        endDate: {
+            type: "ref",
+            columnType: "datetime"
+        },
+        active: {
+            type: "boolean"
+        },
+        user1: {
             type: "string",
             columnType: "varchar(36)",
-            required: true,
-            unique: true
+        },
+        user2: {
+            type: "string",
+            columnType: "varchar(36)",
+        },
+
+        // Add a reference to messages
+        messages: {
+            collection: 'message',
+            via: 'chatId'
         },
     },
 };

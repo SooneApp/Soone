@@ -13,12 +13,7 @@ module.exports = {
             description: 'The user ID',
             type: 'string',
             required: true
-        },
-        decision: {
-            description: 'The decision',
-            type: 'boolean',
-            required: true
-        },
+        }
     },
 
     exits: {
@@ -44,7 +39,7 @@ module.exports = {
 
         //Fill parameters with calculated values
         parameters.id = uuid();
-        parameters.decision = inputs.decision;
+        parameters.decision = null;
 
         //Create matchDecision
         var matchDecision = await MatchDecision.create(parameters).fetch();

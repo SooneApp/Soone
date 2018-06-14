@@ -12,6 +12,7 @@ module.exports = {
         decision: {
             description: 'The decision',
             type: 'boolean',
+            required: true
         },
     },
 
@@ -25,7 +26,6 @@ module.exports = {
     },
 
     fn: async function (inputs, exits) {
-        //TODO : faire la vérif de la réponse de l'autre personne, et update le booléen de match en conséquence
         var parameters = {id: inputs.id};
         delete inputs.id;
 
@@ -37,6 +37,24 @@ module.exports = {
         }
 
         matchDecision = await MatchDecision.update(parameters).set(inputs).fetch();
+
+        if (inputs.decision === 0 || inputs.decision === false) {
+            let values = {
+                id: parameters.id,
+                active: 0
+            };
+            await sails.helpers.match.updateMatch.with(values);
+
+        } else if (inputs.decision === 1 || inputs.decision === true) {
+            let match = sails.helpers.match.getMatch.with(values);
+            if(true){
+                let values = {
+                    id: parameters.id,
+                    active: 1
+                };
+                await sails.helpers.match.updateMatch.with(values);
+            }
+        }
 
         return exits.success(matchDecision[0]);
     }

@@ -15,8 +15,7 @@ module.exports = {
             unique: true
         },
         chatId: {
-            type: "string",
-            columnType: "varchar(36)"
+            model: 'chat'
         },
         senderId: {
             type: "string",
@@ -27,7 +26,7 @@ module.exports = {
             columnType: "varchar(512)"
         },
         date: {
-            type: "string",
+            type: "ref",
             columnType: "datetime",
         },
     },
