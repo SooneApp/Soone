@@ -47,10 +47,9 @@ module.exports = {
         //Fill parameters with calculated values
         parameters.id = uuid();
         parameters.startDate = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
-        // parameters.endDate = moment(parameters.startDate
-        //     .add(6, 'minutes')
-        //     .format('YYYY-MM-DD HH:mm:ss'));
-        parameters.endDate = moment(new Date()).format('YYYY-MM-DD HH:mm:ss');
+        parameters.endDate = moment(parameters.startDate)
+            .add(6, 'minutes')
+            .format('YYYY-MM-DD HH:mm:ss');
         parameters.active = 0;
 
         //Create chat

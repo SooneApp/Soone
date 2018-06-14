@@ -6,8 +6,7 @@ module.exports = {
     inputs: {
         id: {
             description: 'The chat id',
-            type: 'string',
-            required: true
+            type: 'string'
         },
     },
 
@@ -16,7 +15,7 @@ module.exports = {
             responseType: 'json',
         },
         notExists: {
-            description: 'The match doesn t exists'
+            description: 'The chat doesn t exists'
         },
         invalidInputs: {
             description: 'The inputs are invalid'
@@ -32,7 +31,7 @@ module.exports = {
             return exits.invalidInputs();
         }
 
-        let chat = await Chat.findOne(parameters).populate('users');
+        let chat = await Chat.findOne(parameters);
 
         //Test if the match exists
         if (!chat) {

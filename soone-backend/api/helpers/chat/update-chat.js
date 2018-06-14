@@ -1,7 +1,7 @@
 module.exports = {
-    friendlyName: "Update match",
+    friendlyName: "Update chat",
 
-    description: "Update a match to the system based on his id",
+    description: "Update a chat to the system based on his id",
 
     inputs: {
         id: {
