@@ -27,7 +27,7 @@ module.exports = {
     },
 
     fn: async function (inputs, exits) {
-        let parameters = {};
+        var parameters = {};
 
         if(inputs.id) {
             parameters.id = inputs.id;
@@ -37,7 +37,7 @@ module.exports = {
             return exits.invalidInputs();
         }
 
-        let user = await User.findOne(parameters);
+        var user = await User.findOne(parameters);
 
         //Test if the phone number already exists
         if(!user) { 
