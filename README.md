@@ -213,6 +213,30 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ---
   ### Germain
    - Ajout redirection HTTP vers HTTPS
-   - Recherche de solutions certificats mieux que certificats autosignés
+      - Recherche de solutions certificats mieux que certificats autosignés
+     
+  ---
+ 
+ ## Jeudi 14 juin
+ 
+  ### Général
+  
+  
+  ---
+  ### Scott
+  ---
+  ### Matthis
+  ---
+  ### Nans
+  - Brainstorm avec Loïc et Matthis vis à vis de la base de données et des différents modèles
+    - Réflexion et refonte des modèles pour la base de données (correction de problèmes auxquels nous n'avions pas pensé, et optimisation)  [4h passées aujourd'hui]
+    - Refactoring du code impacté par ces modifications  [2h passées aujourd'hui]
+  - Fin de la création des controlleurs et routes pour les chats et les décisions à l'issue d'un "match"
+  ---
+  ### Loïc
+  ---
+  ### Hugo
+  ---
+  ### Germain
   ---
  
