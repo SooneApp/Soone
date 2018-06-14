@@ -27,7 +27,7 @@ module.exports = {
         },
         date: {
             type: "ref",
-            columnType: "datetime",
+            columnType: "datetime"
         },
     },
 
