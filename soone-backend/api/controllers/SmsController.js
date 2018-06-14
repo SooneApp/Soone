@@ -26,8 +26,15 @@ function sendSMS(phoneNumber,message){
 waitingUsers= [];
 module.exports = {
     sendAdvertismentSms: async function (req, res) {
-        var userVal = parseParameters(req);
-        sendSMS(userVal.phoneNumber,"Hey, please download our app here https://")
+      var userVal = parseParameters(req);
+      try {
+        sendSMS(userVal.phoneNumber,"Hey, please download our app here https://");
+       ;}
+      catch(error) {
+        console.error(error);
+        res.toJSON("erreur de numero")
+      }
+
         res.ok();
     },
     sendRegisterCode: async function (req,res){
