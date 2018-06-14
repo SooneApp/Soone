@@ -358,12 +358,12 @@ module.exports = {
   * > https://sailsjs.com/config/*#?sailsconfigssl                          *
   *                                                                         *
   **************************************************************************/
-/*ssl: {
+ssl: {
 	ca: require('fs').readFileSync('/etc/letsencrypt/csr/0001_csr-certbot.pem'),
 	key: require('fs').readFileSync('/etc/letsencrypt/keys/0001_key-certbot.pem'),
 	cert: require('fs').readFileSync('/etc/letsencrypt/live/soone.fun/fullchain.pem')
 },
-*/
+
 
 
   /**************************************************************************

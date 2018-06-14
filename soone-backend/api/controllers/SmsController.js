@@ -14,14 +14,14 @@ function sendSMS(phoneNumber,message){
   const Nexmo = require('nexmo')
 
   const nexmo = new Nexmo({
-    apiKey: "",
+    apiKey: "6a0a416c",
     apiSecret: ""
   })
 
   const from = 'Acme Inc'
   console.log(phoneNumber);
   try {
-      nexmo.message.sendSms(from, phoneNumber.replace(" ",""), message)
+     // nexmo.message.sendSms(from, phoneNumber.replace(" ",""), message)
   }
   catch (e) {
       console.log("Erreur de numero de tel");
@@ -33,8 +33,6 @@ module.exports = {
     sendAdvertismentSms: async function (req, res) {
       var userVal = parseParameters(req);
         sendSMS(userVal.phoneNumber,"Hey, please download our app here https://");
-        console.error(error);
-        res.toJSON("erreur de numero")
         res.ok();
     },
     sendRegisterCode: async function (req,res){
