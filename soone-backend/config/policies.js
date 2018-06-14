@@ -9,10 +9,10 @@
  */
 
 module.exports.policies = {
-  UserController: {
+  /*UserController: {
     add: "isNotLoggedIn",
     update: "isLoggedIn",
     connect: "isNotLoggedIn",
     disconnect: "isLoggedIn"
-  }
+  }*/
 };
