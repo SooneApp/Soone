@@ -14,11 +14,11 @@ describe('UserController.add', function () {
         });
     });
     describe('add() second call with same phone number', function () {
-        it('should return an error 500 because the number already exists', function (done) {
+        it('should return an error 409 because the number already exists', function (done) {
             supertest(sails.hooks.http.app)
                 .post("/api/user")
                 .send({phoneNumber: "0606060606"})
-                .expect(500, done);
+                .expect(409, done);
         });
     });
 });
@@ -39,11 +39,11 @@ describe('UserController.get', function () {
         });
     });
     describe('get() wrong user', function () {
-        it('should return an error 500 because the user doesn t exists', function (done) {
+        it('should return an error 409 because the user doesn t exists', function (done) {
             supertest(sails.hooks.http.app)
                 .get("/api/user")
                 .query({id: "d344d15f-0721-48cc-a113-a7243307eXX"})
-                .expect(500, done);
+                .expect(409, done);
         });
     });
 });
@@ -65,11 +65,11 @@ describe('UserController.connect', function () {
         });
     });
     describe('connect() wrong user', function () {
-        it('should return an error 500 because the phoneNumber doesn t exists', function (done) {
+        it('should return an error 409 because the phoneNumber doesn t exists', function (done) {
             supertest(sails.hooks.http.app)
                 .post("/api/connect")
                 .send({phoneNumber: "0101010102", appToken: "DUMMY"})
-                .expect(500, done);
+                .expect(409, done);
         });
     });
 });

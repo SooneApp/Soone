@@ -3,15 +3,30 @@ function parseParameters(req) {
 };
 
 async function getUser(parameters, res) {
-    return await sails.helpers.user.getUser.with(parameters);
+    return await sails.helpers.user.getUser.with(parameters)
+        .intercept('notExists', function(err)
+        {   
+            res.status("409");
+            res.send(err);
+        })
+        .intercept('invalidInputs', function(err)
+        {   
+            res.status("409");
+            res.send(err);
+        });
 }
 
 module.exports = {
     add: async function (req, res) { 
         var userVal = await sails.helpers.parseParameters.with({req});
 
-        var user = await sails.helpers.user.addUser.with(userVal);
-
+        var user = await sails.helpers.user.addUser.with(userVal)
+            .intercept('alreadyExists', function(err)
+            {   
+                res.status("409");
+                res.send(err);
+            });
+        
         res.json(await sails.helpers.user.sortUser.with({user}));
     },
     get: async function (req, res) { 
@@ -21,7 +36,12 @@ module.exports = {
     },
     update: async function (req, res) {
         var userVal = await sails.helpers.parseParameters.with({req});
-        var user = await sails.helpers.user.updateUser.with(userVal);
+        var user = await sails.helpers.user.updateUser.with(userVal)
+            .intercept('notExists', function(err)
+            {   
+                res.status("409");
+                res.send(err);
+            });
         res.json(await sails.helpers.user.sortUser.with({user}));
     },
     disconnect: async function (req, res) {
