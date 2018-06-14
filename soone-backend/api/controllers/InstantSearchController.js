@@ -61,11 +61,13 @@ module.exports = {
         if(association) {
             var associationTokken = association.appToken;
             var userTokken = user.appToken;
+            var chat = await sails.helpers.chat.addChat.with({idUser1: association.id, idUser2: user.id});
 
             var message = {
                 data: {
                     user1: JSON.stringify(await sails.helpers.user.sortUser.with({user: association})),
-                    user2: JSON.stringify(await sails.helpers.user.sortUser.with({user}))
+                    user2: JSON.stringify(await sails.helpers.user.sortUser.with({user})),
+                    chatId: chat.id
                 }
             };
             sendMessage(message,associationTokken);

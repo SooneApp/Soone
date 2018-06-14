@@ -1,4 +1,5 @@
 var Sails = require('sails');
+var moment = require('moment');
 
 // Before running any tests...
 before(function (done) {
@@ -26,9 +27,9 @@ before(function (done) {
                 "sexInterests": [2],
                 "description": "Je chill dans mon canap trkl",
                 "lastSeen": new Date('2017-12-17T03:24:00'),
+                "deletedAt": null,
+                "appToken": token,
                 "accountType": 1,
-                "deletedAt": "",
-                "appToken": token
             },
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e81",
@@ -40,9 +41,9 @@ before(function (done) {
                 "sexInterests": [1,2],
                 "description": "",
                 "lastSeen": new Date('2018-05-17T03:24:00'),
+                "deletedAt": null,
+                "appToken": token,
                 "accountType": 1,
-                "deletedAt": "",
-                "appToken": token
             },
             {
                 "id": "d344d15f-0721-48cc-a113-a7243307e82",
@@ -55,7 +56,7 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2018-02-13T03:24:00'),
                 "accountType": 1,
-                "deletedAt": "",
+                "deletedAt": null,
                 "appToken": token
             },
             {
@@ -69,7 +70,7 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2015-07-20T03:24:00'),
                 "accountType": 1,
-                "deletedAt": "",
+                "deletedAt": null,
                 "appToken": token
             },
             {
@@ -83,7 +84,7 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2018-01-20T03:24:00'),
                 "accountType": 1,
-                "deletedAt": "",
+                "deletedAt": null,
                 "appToken": token
             },
             {
@@ -97,11 +98,38 @@ before(function (done) {
                 "description": "",
                 "lastSeen": new Date('2018-01-21T03:24:00'),
                 "accountType": 1,
-                "deletedAt": "",
+                "deletedAt": null,
                 "appToken": token
             }])
             .exec(function createCB(err, user) {
-                done();
+                Chat.createEach([
+                {
+                    "id": "505a5395-e993-4bd8-9345-a601284fc654",
+                    "user1": "d344d15f-0721-48cc-a113-a7243307e80",
+                    "user2": "d344d15f-0721-48cc-a113-a7243307e81",
+                    "startDate": moment().format('YYYY-MM-DD HH:mm:ss'),
+                    "endDate": moment().add(6, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                    "active": false
+                },
+                {
+                    "id": "505a5395-e993-4bd8-9345-a601284fc655",
+                    "user1": "d344d15f-0721-48cc-a113-a7243307e82",
+                    "user2": "d344d15f-0721-48cc-a113-a7243307e81",
+                    "startDate": moment().subtract(7, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                    "endDate": moment().subtract(1, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                    "active": false
+                },
+                {
+                    "id": "505a5395-e993-4bd8-9345-a601284fc656",
+                    "user1": "d344d15f-0721-48cc-a113-a7243307e83",
+                    "user2": "d344d15f-0721-48cc-a113-a7243307e81",
+                    "startDate": moment().subtract(7, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                    "endDate": moment().subtract(1, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                    "active": true
+                }])
+                .exec(function createCB(err, user) {
+                    done();
+                });
             });
         });
 });
