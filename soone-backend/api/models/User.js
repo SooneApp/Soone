@@ -15,9 +15,11 @@ module.exports = {
         },
         name: {
             type: "string",
+            columnType: "varchar(64)",
         },
         email: {
-            type: "string"
+            type: "string",
+            columnType: "varchar(128)",
         },
         phoneNumber: {
             type: "string",

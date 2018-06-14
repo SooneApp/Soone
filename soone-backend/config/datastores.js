@@ -51,6 +51,7 @@ module.exports.datastores = {
         adapter: require('sails-mysql'),
         url: 'mysql://soone:soone@51.38.230.10:3306/soone',
 
+
     },
 
 
