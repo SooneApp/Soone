@@ -24,29 +24,40 @@ module.exports = {
             required: true
         },
         birthDate: {
-            type: "string",
+            type: "ref",
             columnType: "datetime",
         },
         sex: {
-            model: "sex",
+            type: "number"
         },
-        sexInterest: {
-            model: "sexinterest"
+        sexInterests: {
+            type: "json"
         },
         description: {
             type: "string"
         },
         lastSeen: {
-            type: "string",
+            type: "ref",
             columnType: "datetime"
         },
         accountType: {
             model: "accounttype",
         },
         deletedAt: {
-            type: "string",
+            type: "ref",
             columnType: "datetime"
         },
+        appToken: {
+            type: "ref"
+        }
     },
+    beforeUpdate: function (valuesToSet, proceed) {
+        if(typeof valuesToSet.sexInterests == "Array")
+        {
+            valuesToSet.sexInterests = JSON.stringify(valuesToSet.sexInterests);
+        }
+
+        return proceed();
+    }
 };
 

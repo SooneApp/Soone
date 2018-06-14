@@ -3,48 +3,41 @@ function parseParameters(req) {
 };
 
 async function getUser(parameters, res) {
-    return await sails.helpers.user.getUser.with(parameters)
-        .tolerate('notExists', (err) => {
-            res.status(409);
-            return err;
-        })
-        .tolerate('invalidInputs', (err) => {
-            res.status(409);
-            return err;
-        });
+    return await sails.helpers.user.getUser.with(parameters);
 }
 
 module.exports = {
     add: async function (req, res) { 
-        var userVal = parseParameters(req);
+        var userVal = await sails.helpers.parseParameters.with({req});
 
-        var user = await sails.helpers.user.addUser.with(userVal)
-            .tolerate('alreadyExists', (err) => {
-                res.status(409);
-                return err;
-            });
-        
-        res.json(user);
+        var user = await sails.helpers.user.addUser.with(userVal);
+
+        res.json(await sails.helpers.user.sortUser.with({user}));
     },
     get: async function (req, res) { 
-        var user = await getUser(parseParameters(req), res);
+        var user = await getUser(await sails.helpers.parseParameters.with({req}), res);
 
-        res.json(user);
+        res.json(await sails.helpers.user.sortUser.with({user}));
     },
     update: async function (req, res) {
-        var userVal = parseParameters(req);
+        var userVal = await sails.helpers.parseParameters.with({req});
         var user = await sails.helpers.user.updateUser.with(userVal);
-        res.json(user);
+        res.json(await sails.helpers.user.sortUser.with({user}));
     },
     disconnect: async function (req, res) {
         req.session.destroy(function(err) {
-            return res.success();
+            return res.ok();
         });
     },
     connect: async function (req, res) {
-        var user = await getUser(parseParameters(req), res);
+        var parameters = await sails.helpers.parseParameters.with({req});
+
+        var user = await getUser({ phoneNumber: parameters.phoneNumber },res);
+
+        await sails.helpers.user.connectUser.with({ id: user.id, appToken: parameters.appToken });
+
         req.session.userId = user.id;
-        res.json(user);
+        res.json(await sails.helpers.user.sortUser.with({user}));
     }
 };
 

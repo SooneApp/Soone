@@ -9,29 +9,22 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-//module.exports.bootstrap = async function(done) {
+module.exports.bootstrap = async function(done) {
+  
+  var admin = require('firebase-admin');
 
-  // By convention, this is a good place to set up fake data during development.
-  //
-  // For example:
-  // ```
-  // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return done();
-  // }
-  //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
-  //   // etc.
-  // ]);
-  // ```
+  var serviceAccount = require('../assets/firebase/serviceAccountKey.json');
+  
+  admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      databaseURL: 'https://soone-3343a.firebaseio.com/'
+  });
 
   // Don't forget to trigger `done()` when this bootstrap function's logic is finished.
   // (otherwise your server will never lift, since it's waiting on the bootstrap)
-//  return done();
-
-//};
+  //  return done();
+  return done();
+};
 /*
 module.exports.bootstrap = function (cb) {
     var express = require("express"),
