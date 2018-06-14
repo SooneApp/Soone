@@ -41,15 +41,23 @@ module.exports = {
 
     fn: async function (inputs, exits) {
         var uuid = require('uuid/v4');
+        var notExists = false;
+
         var chat = await sails.helpers.chat.getChat.with({ id: inputs.chatId})
-            .tolerate('notExists',exits.notExists);
+            .tolerate('notExists',function() {
+                notExists = true;
+            });
+
+        if(notExists) {
+            return exits.notExists();
+        }
 
         var receiver;
         var sender;
         var now = moment().format('YYYY-MM-DD HH:mm:ss');
         
         if(moment(chat.endDate).format('YYYY-MM-DD HH:mm:ss') < now && !chat.active) {
-            exits.inactiveConversation();
+            return exits.inactiveConversation();
         }
 
         if(chat.user1 == inputs.senderId) {
@@ -57,7 +65,7 @@ module.exports = {
         } else if (chat.user2 == inputs.senderId) {
             receiver = chat.user1;
         } else {
-            exits.unauthorized();
+            return exits.unauthorized();
         }
 
         receiver = await sails.helpers.user.getUser.with({ id: receiver});

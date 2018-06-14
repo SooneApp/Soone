@@ -38,14 +38,19 @@ module.exports = {
     },
     send: async function (req, res) {
         var parameters = await sails.helpers.parseParameters.with({req});
+        var shouldReturn = true;
+
         await sails.helpers.chat.sendMessage.with(parameters)
-            .intercept(['notExists','unauthorized','inactiveConversation'] , function(err)
+            .tolerate(['notExists','unauthorized','inactiveConversation'] , function(err)
             {   
                 res.status("409");
                 res.send(err);
+                shouldReturn = false;
             });
-
-        res.ok();
+        
+        if(shouldReturn) {
+            res.ok();
+        }
     }
 };
 
