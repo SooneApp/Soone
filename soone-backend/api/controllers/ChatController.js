@@ -35,6 +35,12 @@ module.exports = {
         var chatVal = parseParameters(req);
         var chat = await sails.helpers.chat.updateChat.with(chatVal);
         res.json(chat);
+    },
+    send: async function (req, res) {
+        var parameters = await sails.helpers.parseParameters.with({req});
+        await sails.helpers.chat.sendMessage.with(parameters);
+
+        res.ok();
     }
 };
 

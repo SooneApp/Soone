@@ -20,13 +20,17 @@ module.exports.routes = {
     "GET /api/disconnect": "UserController.disconnect",
     //INSTANT SEARCH ROUTES
     "POST /api/instantSearch": "InstantSearchController.register",
-    //Chat  ROUTES
-    "GET /api/chat": "ChatController.get",
-    "POST /api/chat": "ChatController.add",
     //Decision decision ROUTES
     "GET /api/decision": "DecisionController.get",
     "PUT /api/decision": "DecisionController.update",
-
+    //MATCH ROUTES
+    "GET /api/chat": "ChatController.get",
+    "POST /api/chat": "ChatController.add",
+    //MESSAGE ROUTES
+    "POST /api/message": "ChatController.send",
+    //MATCH DECISION ROUTES
+    "GET /api/matchDecision": "DecisionController.get",
+    "PUT /api/matchDecision": "DecisionController.update",
     //SMS ROUTES
     "POST /api/sms/advertising": "SmsController.sendAdvertismentSms"
 };
