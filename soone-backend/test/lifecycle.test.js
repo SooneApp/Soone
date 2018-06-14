@@ -38,7 +38,7 @@ before(function (done) {
                 "birthDate": new Date('1998-10-17T03:24:00'),
                 "phoneNumber": "0202020202",
                 "sex": 2,
-                "sexInterests": [1,2],
+                "sexInterests": [1, 2],
                 "description": "",
                 "lastSeen": new Date('2018-05-17T03:24:00'),
                 "deletedAt": null,
@@ -52,7 +52,7 @@ before(function (done) {
                 "birthDate": new Date('1980-05-17T03:24:00'),
                 "phoneNumber": "0222022222",
                 "sex": 1,
-                "sexInterests": [1,2],
+                "sexInterests": [1, 2],
                 "description": "",
                 "lastSeen": new Date('2018-02-13T03:24:00'),
                 "accountType": 1,
@@ -103,35 +103,50 @@ before(function (done) {
             }])
             .exec(function createCB(err, user) {
                 Chat.createEach([
-                {
-                    "id": "505a5395-e993-4bd8-9345-a601284fc654",
-                    "user1": "d344d15f-0721-48cc-a113-a7243307e80",
-                    "user2": "d344d15f-0721-48cc-a113-a7243307e81",
-                    "startDate": moment().format('YYYY-MM-DD HH:mm:ss'),
-                    "endDate": moment().add(6, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
-                    "active": false
-                },
-                {
-                    "id": "505a5395-e993-4bd8-9345-a601284fc655",
-                    "user1": "d344d15f-0721-48cc-a113-a7243307e82",
-                    "user2": "d344d15f-0721-48cc-a113-a7243307e81",
-                    "startDate": moment().subtract(7, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
-                    "endDate": moment().subtract(1, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
-                    "active": false
-                },
-                {
-                    "id": "505a5395-e993-4bd8-9345-a601284fc656",
-                    "user1": "d344d15f-0721-48cc-a113-a7243307e83",
-                    "user2": "d344d15f-0721-48cc-a113-a7243307e81",
-                    "startDate": moment().subtract(7, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
-                    "endDate": moment().subtract(1, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
-                    "active": true
-                }])
-                .exec(function createCB(err, user) {
-                    done();
-                });
+                    {
+                        "id": "505a5395-e993-4bd8-9345-a601284fc654",
+                        "user1": "d344d15f-0721-48cc-a113-a7243307e80",
+                        "user2": "d344d15f-0721-48cc-a113-a7243307e81",
+                        "startDate": moment().format('YYYY-MM-DD HH:mm:ss'),
+                        "endDate": moment().add(6, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                        "active": false
+                    },
+                    {
+                        "id": "505a5395-e993-4bd8-9345-a601284fc655",
+                        "user1": "d344d15f-0721-48cc-a113-a7243307e82",
+                        "user2": "d344d15f-0721-48cc-a113-a7243307e81",
+                        "startDate": moment().subtract(7, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                        "endDate": moment().subtract(1, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                        "active": false
+                    },
+                    {
+                        "id": "505a5395-e993-4bd8-9345-a601284fc656",
+                        "user1": "d344d15f-0721-48cc-a113-a7243307e83",
+                        "user2": "d344d15f-0721-48cc-a113-a7243307e81",
+                        "startDate": moment().subtract(7, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                        "endDate": moment().subtract(1, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                        "active": true
+                    }])
+                    .exec(function createCB(err, user) {
+                        Decision.createEach([
+                            {
+                                "id": "505a5395-e993-4bd8-9345-a601284fc660",
+                                "idChat": "505a5395-e993-4bd8-9345-a601284fc654",
+                                "idUser": "d344d15f-0721-48cc-a113-a7243307e80",
+                                "decision": true
+                            },
+                            {
+                                "id": "505a5395-e993-4bd8-9345-a601284fc661",
+                                "idChat": "505a5395-e993-4bd8-9345-a601284fc654",
+                                "idUser": "d344d15f-0721-48cc-a113-a7243307e81",
+                                "decision": false
+                            }])
+                            .exec(function createCB(err, user) {
+                                done();
+                            });
+                    });
             });
-        });
+    });
 });
 
 after(function (done) {
