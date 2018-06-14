@@ -20,21 +20,21 @@ function sendSMS(phoneNumber,message){
 
   const from = 'Acme Inc'
   console.log(phoneNumber);
-  nexmo.message.sendSms(from, phoneNumber, message)
+  try {
+      nexmo.message.sendSms(from, phoneNumber.replace(" ",""), message)
+  }
+  catch (e) {
+      console.log("Erreur de numero de tel");
+  }
 
 }
 waitingUsers= [];
 module.exports = {
     sendAdvertismentSms: async function (req, res) {
       var userVal = parseParameters(req);
-      try {
         sendSMS(userVal.phoneNumber,"Hey, please download our app here https://");
-       ;}
-      catch(error) {
         console.error(error);
         res.toJSON("erreur de numero")
-      }
-
         res.ok();
     },
     sendRegisterCode: async function (req,res){
