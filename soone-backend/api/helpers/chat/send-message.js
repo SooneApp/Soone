@@ -41,15 +41,14 @@ module.exports = {
 
     fn: async function (inputs, exits) {
         var uuid = require('uuid/v4');
-        var chat = await sails.helpers.chat.getChat.with({ id: inputs.chatId});
+        var chat = await sails.helpers.chat.getChat.with({ id: inputs.chatId})
+            .tolerate('notExists',exits.notExists);
 
         var receiver;
         var sender;
         var now = moment().format('YYYY-MM-DD HH:mm:ss');
         
-        if(!chat) {
-            exits.notExists();
-        } else if(moment(chat.endDate).format('YYYY-MM-DD HH:mm:ss') < now && !chat.active) {
+        if(moment(chat.endDate).format('YYYY-MM-DD HH:mm:ss') < now && !chat.active) {
             exits.inactiveConversation();
         }
 

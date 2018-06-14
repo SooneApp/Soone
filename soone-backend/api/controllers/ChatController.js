@@ -38,7 +38,12 @@ module.exports = {
     },
     send: async function (req, res) {
         var parameters = await sails.helpers.parseParameters.with({req});
-        await sails.helpers.chat.sendMessage.with(parameters);
+        await sails.helpers.chat.sendMessage.with(parameters)
+            .intercept(['notExists','unauthorized','inactiveConversation'] , function(err)
+            {   
+                res.status("409");
+                res.send(err);
+            });
 
         res.ok();
     }
