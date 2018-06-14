@@ -14,7 +14,7 @@ function sendSMS(phoneNumber,message){
   const Nexmo = require('nexmo')
 
   const nexmo = new Nexmo({
-    apiKey: "",
+    apiKey: "6a0a416c",
     apiSecret: ""
   })
 
