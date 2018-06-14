@@ -11,48 +11,66 @@ function getRandomInt(max) {
 let waitingUsers=[];
 
 function sendSMS(phoneNumber,message){
-  AWS.config.update({
-    accessKeyId: '',
-    secretAccessKey: '',
-    region: 'us-east-1'
-  });
+  const Nexmo = require('nexmo')
 
-  var sns = new AWS.SNS();
-  var params = {
-    Message: message,
-    MessageStructure: 'string',
-    PhoneNumber: phoneNumber,
-    Subject: 'your subject'
-  };
+  const nexmo = new Nexmo({
+    apiKey: "",
+    apiSecret: ""
+  })
 
-  sns.publish(params, function(err, data) {
-    if (err) console.log(err, err.stack); // an error occurred
-    else     console.log(data);           // successful response
-  });
+  const from = 'Acme Inc'
+  console.log(phoneNumber);
+  nexmo.message.sendSms(from, phoneNumber, message)
+
 }
 waitingUsers= [];
 module.exports = {
     sendAdvertismentSms: async function (req, res) {
         var userVal = parseParameters(req);
-        sendSMS(userVal.PhoneNumber,"Hey, please download our app here https://")
+        sendSMS(userVal.phoneNumber,"Hey, please download our app here https://")
         res.ok();
     },
     sendRegisterCode: async function (req,res){
-      var userVal = parseParameters(req);
 
-      code = getRandomInt(9999);
-      user = {phoneNumber: userVal.phoneNumber, code: code}
-      var picked = waitingUsers.find(o => o.phoneNumber === userVal.phoneNumber);
-      console.log(picked);
+        var userVal = parseParameters(req);
 
-      if (typeof picked !== 'undefined' && picked.phoneNumber==user.phoneNumber){
-      }
-      else{
-          sendSMS(userVal.phoneNumber,"Votre code d'accès est : "+code);
-          waitingUsers.push(user);
-      }
+        var userbdd = await sails.helpers.user.getUser.with(userVal).tolerate("notExists",function(){});
+        if (typeof userbdd == 'undefined'){
+            code = getRandomInt(9999);
+            user = {phoneNumber: userVal.phoneNumber, code: code}
+            var picked = waitingUsers.find(o => o.phoneNumber === userVal.phoneNumber);
+            console.log(code);
+            if (typeof picked !== 'undefined' && picked.phoneNumber==user.phoneNumber){
+            }
+            else{
+                //sendSMS(userVal.phoneNumber,"Votre code d'accès est : "+code);
+                waitingUsers.push(user);
+            }
 
-        res.json(waitingUsers)
+            res.ok()
+        }
+        else{
+            res.json("erreur")
+        }
+    },
+    receiveAccessCode: async function(req,res){
+        var userVal = parseParameters(req);
+        console.log(userVal);
+        var picked = waitingUsers.find(o => o.phoneNumber === userVal.phoneNumber);
+        console.log(picked);
+        if (typeof picked !== 'undefined' && picked.code==userVal.code){
+            var user = await sails.helpers.user.addUser.with(userVal);
+
+            var index = waitingUsers.indexOf(picked);
+            if (index > -1) {
+                waitingUsers.splice(index, 1);
+            }
+            console.log(waitingUsers);
+            res.ok()
+        }
+        else{
+            res.json("error")
+        }
     }
 };
 

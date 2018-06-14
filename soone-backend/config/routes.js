@@ -22,5 +22,6 @@ module.exports.routes = {
   "POST /api/instantSearch" : "InstantSearchController.register",
   //SMS ROUTES
   "POST /api/sms/advertising" : "SmsController.sendAdvertismentSms",
-  "POST /api/sms/register" : "SmsController.sendRegisterCode"
+  "POST /api/sms/register" : "SmsController.sendRegisterCode",
+  "POST /api/sms/receive" : "SmsController.receiveAccessCode"
 };
