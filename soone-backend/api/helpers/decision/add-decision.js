@@ -1,11 +1,11 @@
 module.exports = {
     friendlyName: "Add decision",
 
-    description: "Add a match decision",
+    description: "Add a decision",
 
     inputs: {
-        idMatch: {
-            description: 'The match ID',
+        idChat: {
+            description: 'The chat ID',
             type: 'string',
             required: true
         },
@@ -21,19 +21,19 @@ module.exports = {
             responseType: 'json',
         },
         alreadyExists: {
-            description: 'The phone number already exists'
+            description: 'The decision already exists'
         }
     },
 
     fn: async function (inputs, exits) {
-        var uuid = require('uuid/v4');
-        var parameters = {
-            idMatch: inputs.idMatch,
+        let uuid = require('uuid/v4');
+        let parameters = {
+            idChat: inputs.idChat,
             idUser: inputs.idUser
         };
 
-        //Test if the phone number already exists
-        if (await MatchDecision.findOne(parameters)) {
+        //Test if the chat already exists
+        if (await Decision.findOne(parameters)) {
             return exits.alreadyExists();
         }
 
@@ -41,11 +41,11 @@ module.exports = {
         parameters.id = uuid();
         parameters.decision = null;
 
-        //Create matchDecision
-        var matchDecision = await MatchDecision.create(parameters).fetch();
+        //Create decision
+        let decision = await Decision.create(parameters).fetch();
 
-        sails.log("Created new matchDecision with id : " + parameters.id);
+        sails.log("Created new decision with id : " + parameters.id);
 
-        return exits.success(matchDecision);
+        return exits.success(decision);
     }
 };

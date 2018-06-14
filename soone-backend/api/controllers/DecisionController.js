@@ -16,25 +16,25 @@ async function getDecision(parameters, res) {
 
 module.exports = {
     add: async function (req, res) { 
-        var matchDecisionVal = parseParameters(req);
+        var decisionVal = parseParameters(req);
 
-        var matchDecision = await sails.helpers.decision.addDecision.with(matchDecisionVal)
+        var decision = await sails.helpers.decision.addDecision.with(decisionVal)
             .tolerate('alreadyExists', (err) => {
                 res.status(409);
                 return err;
             });
         
-        res.json(matchDecision);
+        res.json(decision);
     },
     get: async function (req, res) { 
-        var matchDecision = await getDecision(parseParameters(req), res);
+        let decision = await getDecision(parseParameters(req), res);
 
-        res.json(matchDecision);
+        res.json(decision);
     },
     update: async function (req, res) {
-        var matchDecisionVal = parseParameters(req);
-        var matchDecision = await sails.helpers.decision.updateDecision.with(matchDecisionVal);
-        res.json(matchDecision);
+        let decisionVal = parseParameters(req);
+        let decision = await sails.helpers.decision.updateDecision.with(decisionVal);
+        res.json(decision);
     }
 };
 

@@ -1,16 +1,16 @@
 module.exports = {
-    friendlyName: "Update match decision",
+    friendlyName: "Update decision",
 
-    description: "Update a match decision to the system based on his id",
+    description: "Update decision to the system based on its id",
 
     inputs: {
         id: {
-            description: 'The id of the match decision to update',
+            description: 'The id of the decision to update',
             type: 'string',
             required: true
         },
         decision: {
-            description: 'The decision',
+            description: 'The decision boolean value',
             type: 'boolean',
             required: true
         },
@@ -21,41 +21,55 @@ module.exports = {
             responseType: 'json',
         },
         notExists: {
-            description: 'The match decision doesn t exists'
+            description: 'The decision doesn t exists'
         }
     },
 
     fn: async function (inputs, exits) {
-        var parameters = {id: inputs.id};
+        let parameters = {id: inputs.id};
         delete inputs.id;
 
-        var matchDecision = await MatchDecision.findOne(parameters);
+        let decision = await Decision.findOne(parameters);
 
-        //Test if the match exist
-        if (!matchDecision) {
+        //Test if the decision exist
+        if (!decision) {
             return exits.notExists();
         }
 
-        matchDecision = await MatchDecision.update(parameters).set(inputs).fetch();
+        decision = await Decision.update(parameters).set(inputs).fetch();
+
+        let idChat = decision[0].idChat.toString();
+        let userId = decision[0].idUser.toString();
 
         if (inputs.decision === 0 || inputs.decision === false) {
             let values = {
-                id: parameters.id,
+                id: idChat,
                 active: 0
             };
-            await sails.helpers.match.updateMatch.with(values);
+            await sails.helpers.chat.updateChat.with(values);
 
         } else if (inputs.decision === 1 || inputs.decision === true) {
-            let match = sails.helpers.match.getMatch.with(values);
-            if(true){
+
+            let chat = await sails.helpers.chat.getChat.with({id: idChat});
+
+            let otherUserId;
+
+            userId === chat.user1 ? otherUserId = chat.user2 : otherUserId = chat.user1;
+
+            let otherUserDecison = await sails.helpers.decision.getDecision.with({
+                idChat: idChat,
+                idUser: otherUserId
+            });
+
+            if (otherUserDecison.decision === true || otherUserDecison.decision === 1) {
                 let values = {
-                    id: parameters.id,
+                    id: idChat,
                     active: 1
                 };
-                await sails.helpers.match.updateMatch.with(values);
+                await sails.helpers.chat.updateChat.with(values);
             }
         }
 
-        return exits.success(matchDecision[0]);
+        return exits.success(decision[0]);
     }
 };

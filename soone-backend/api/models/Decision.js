@@ -14,7 +14,7 @@ module.exports = {
             required: true,
             unique: true
         },
-        idMatch: {
+        idChat: {
             type: "string",
             columnType: "varchar(36)",
             required: true,

@@ -1,11 +1,11 @@
 module.exports = {
     friendlyName: "Get decision",
 
-    description: "Get a decision via match id",
+    description: "Get a decision via chat id and user id",
 
     inputs: {
-        idMatch: {
-            description: 'The id of the match',
+        idChat: {
+            description: 'The id of the chat',
             type: 'string',
             required: true
         },
@@ -32,20 +32,20 @@ module.exports = {
     fn: async function (inputs, exits) {
         let parameters = {};
 
-        if (inputs.idMatch && inputs.idUser) {
-            parameters.idMatch = inputs.idMatch;
+        if (inputs.idChat && inputs.idUser) {
+            parameters.idChat = inputs.idChat;
             parameters.idUser = inputs.idUser
         } else {
             return exits.invalidInputs();
         }
 
-        let matchDecision = await MatchDecision.findOne(parameters);
+        let decision = await Decision.findOne(parameters);
 
-        //Test if the matchDecision exists
-        if (!matchDecision) {
+        //Test if the decision exists
+        if (!decision) {
             return exits.notExists();
         }
 
-        return exits.success(matchDecision);
+        return exits.success(decision);
     }
 };

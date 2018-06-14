@@ -5,12 +5,12 @@ module.exports = {
 
     inputs: {
         id: {
-            description: 'The id of the match to update',
+            description: 'The id of the chat to update',
             type: 'string',
             required: true
         },
         active: {
-            description: 'The fact that the match is active or not',
+            description: 'The fact that the chat is active or not',
             type: 'boolean',
             required: true
         },
@@ -21,23 +21,23 @@ module.exports = {
             responseType: 'json',
         },
         notExists: {
-            description: 'The match doesn t exists'
+            description: 'The chat doesn t exists'
         }
     },
 
     fn: async function (inputs, exits) {
-        var parameters = {id: inputs.id};
+        let parameters = {id: inputs.id};
         delete inputs.id;
 
-        var match = await Match.findOne(parameters);
+        let chat = await Chat.findOne(parameters);
 
-        //Test if the match exist
-        if (!match) {
+        //Test if the chat exist
+        if (!chat) {
             return exits.notExists();
         }
 
-        match = await Match.update(parameters).set(inputs).fetch();
+        chat = await Chat.update(parameters).set(inputs).fetch();
 
-        return exits.success(match[0]);
+        return exits.success(chat[0]);
     }
 };

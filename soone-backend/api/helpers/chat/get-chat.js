@@ -6,7 +6,8 @@ module.exports = {
     inputs: {
         id: {
             description: 'The chat id',
-            type: 'string'
+            type: 'string',
+            required: true
         },
     },
 
