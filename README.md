@@ -234,6 +234,14 @@ Objectif atteint avec un reste à faire pour le lendemain.
   - Fin de la création des controlleurs et routes pour les chats et les décisions à l'issue d'un "match" [2h passées aujourd'hui]
   ---
   ### Loïc
+    - Brainstorm sur les modèles afin de rajouter les problématiques manquantes pour la messagerie/le match des utilisateurs avec Matthis et Nans
+    - Travail sur le système de messagerie : terminé [estimé à 1 jour, réalisé en 1 jour en incluant le brainstorm] 
+      - Création de routes pour envoyer des messages
+      - Création d'action controller traitant le message et renvoyant les informations vers le second utilisateur
+      - Création de tests unitaires
+    - Résolution de problématiques apparues suite à la mise en production de l'application et aux premiers tests android : [non estimé]
+      - Refonte complète de la gestion des erreurs pour correctement traiter les messages d'erreur
+      - Désactivation des policies d'authentification pour faciliter les tests android
   ---
   ### Hugo
   ---
