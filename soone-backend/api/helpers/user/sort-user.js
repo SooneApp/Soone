@@ -1,7 +1,7 @@
 module.exports = {
-    friendlyName: "Update user",
+    friendlyName: "Sort user",
 
-    description: "Update a user to the system based on his id",
+    description: "Remove entries from user object in order to return it",
 
     inputs: {
         user: {
