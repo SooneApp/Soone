@@ -15,18 +15,19 @@ async function getChat(parameters, res) {
 }
 
 module.exports = {
-    add: async function (req, res) { 
+    add: async function (req, res) {
         var chatVal = parseParameters(req);
 
         var chat = await sails.helpers.chat.addChat.with(chatVal)
-            .tolerate('alreadyExists', (err) => {
+            .tolerate('alreadyExists', function (err) {
                 res.status(409);
-                return err;
+                res.send(err);
             });
-        
-        res.json(chat);
+        if (chat) {
+            res.json(chat);
+        }
     },
-    get: async function (req, res) { 
+    get: async function (req, res) {
         var chat = await getChat(parseParameters(req), res);
 
         res.json(chat);
@@ -41,14 +42,13 @@ module.exports = {
         var shouldReturn = true;
 
         await sails.helpers.chat.sendMessage.with(parameters)
-            .tolerate(['notExists','unauthorized','inactiveConversation'] , function(err)
-            {   
+            .tolerate(['notExists', 'unauthorized', 'inactiveConversation'], function (err) {
                 res.status("409");
                 res.send(err);
                 shouldReturn = false;
             });
-        
-        if(shouldReturn) {
+
+        if (shouldReturn) {
             res.ok();
         }
     }
