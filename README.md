@@ -255,5 +255,7 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ### Hugo
   ---
   ### Germain
+    - Design de la marque, logo et icônes
+    - Recherche de solutions pour analyseur de code => sonarqube
   ---
  
