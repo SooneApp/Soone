@@ -2,6 +2,10 @@
 
 ## Vendredi 25 mai
 
+### TouT le monde
+ - Brainstorming
+ - Explication du concept du projet
+
 ### Scott
 
 #### Initialisation du projet et reprise du travail déjà effectué ~1h30
@@ -226,6 +230,11 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ### Scott
   ---
   ### Matthis
+   - Mise à jour mineur du site.
+   - Test en réel des envoies de SMS.
+   - Brainstorm sur les modele de BDD (CF Nans).
+   - Logo avec Germain.
+   - Pair programming avec Nans.
   ---
   ### Nans
   - Brainstorm avec Loïc et Matthis vis à vis de la base de données et des différents modèles
