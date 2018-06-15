@@ -1,3 +1,5 @@
+let admin = require("firebase-admin");
+
 module.exports = {
     friendlyName: "Update decision",
 
@@ -62,14 +64,37 @@ module.exports = {
             });
 
             if (otherUserDecison.decision === true || otherUserDecison.decision === 1) {
+
                 let values = {
                     id: idChat,
                     active: 1
                 };
                 await sails.helpers.chat.updateChat.with(values);
+
+                let receiver = await sails.helpers.user.getUser.with({id: userId});
+                let sender = await sails.helpers.user.getUser.with({id: otherUserId});
+                sendMessage(idChat,receiver.appToken, sender.name);
+                sendMessage(idChat,sender.appToken, receiver.name);
+
             }
         }
 
         return exits.success(decision[0]);
     }
+
 };
+
+function sendMessage(idChat, target, name) {
+    let message = {
+        data: {
+            chatId: idChat
+        },
+        notification: {
+            "title":"It's a match !",
+            "body":"You and " + name + " matched each other!"
+        },
+    };
+
+    message.token = target;
+    return admin.messaging().send(message);
+}

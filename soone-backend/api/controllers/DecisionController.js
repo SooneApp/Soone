@@ -4,29 +4,30 @@ function parseParameters(req) {
 
 async function getDecision(parameters, res) {
     return await sails.helpers.decision.getDecision.with(parameters)
-        .tolerate('notExists', (err) => {
+        .tolerate('notExists', function(err) {
             res.status(409);
-            return err;
+            res.send(err);
         })
-        .tolerate('invalidInputs', (err) => {
+        .tolerate('invalidInputs', function(err) {
             res.status(409);
-            return err;
+            res.send(err);
         });
 }
 
 module.exports = {
-    add: async function (req, res) { 
-        var decisionVal = parseParameters(req);
+    add: async function (req, res) {
+        let decisionVal = parseParameters(req);
 
-        var decision = await sails.helpers.decision.addDecision.with(decisionVal)
-            .tolerate('alreadyExists', (err) => {
+        let decision = await sails.helpers.decision.addDecision.with(decisionVal)
+            .tolerate('alreadyExists', function (err) {
                 res.status(409);
-                return err;
+                res.send(err);
             });
-        
-        res.json(decision);
+        if (decision) {
+            res.json(decision);
+        }
     },
-    get: async function (req, res) { 
+    get: async function (req, res) {
         let decision = await getDecision(parseParameters(req), res);
 
         res.json(decision);

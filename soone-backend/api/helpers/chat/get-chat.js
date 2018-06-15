@@ -16,7 +16,7 @@ module.exports = {
             responseType: 'json',
         },
         notExists: {
-            description: 'The chat doesn t exists'
+            description: 'The chat doesn\'t exists'
         },
         invalidInputs: {
             description: 'The inputs are invalid'
