@@ -65,16 +65,17 @@ module.exports = {
 
             if (otherUserDecison.decision === true || otherUserDecison.decision === 1) {
 
-                let receiver = await sails.helpers.user.getUser.with({id: userId});
-                let sender = await sails.helpers.user.getUser.with({id: otherUserId});
-
-                sendMessage(idChat,receiver.token, sender.name);
-                sendMessage(idChat,sender.token, receiver.name);
                 let values = {
                     id: idChat,
                     active: 1
                 };
                 await sails.helpers.chat.updateChat.with(values);
+
+                let receiver = await sails.helpers.user.getUser.with({id: userId});
+                let sender = await sails.helpers.user.getUser.with({id: otherUserId});
+                sendMessage(idChat,receiver.token, sender.name);
+                sendMessage(idChat,sender.token, receiver.name);
+
             }
         }
 
