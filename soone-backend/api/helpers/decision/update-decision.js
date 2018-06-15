@@ -73,8 +73,8 @@ module.exports = {
 
                 let receiver = await sails.helpers.user.getUser.with({id: userId});
                 let sender = await sails.helpers.user.getUser.with({id: otherUserId});
-                sendMessage(idChat,receiver.token, sender.name);
-                sendMessage(idChat,sender.token, receiver.name);
+                sendMessage(idChat,receiver.appToken, sender.name);
+                sendMessage(idChat,sender.appToken, receiver.name);
 
             }
         }

@@ -2,6 +2,7 @@ var rewire = require('rewire');
 var app = rewire('../../../api/controllers/DecisionController.js');
 var supertest = require('supertest');
 var agent = supertest.agent;
+var assert = require("assert");
 
 describe('DecisionController.update', function () {
     describe('update a decision', function () {
