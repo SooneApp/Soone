@@ -259,3 +259,24 @@ Objectif atteint avec un reste à faire pour le lendemain.
     - Recherche de solutions pour analyseur de code => sonarqube
   ---
  
+ ## Vendredi 15 juin
+ 
+  ### Général
+  
+  ---
+  ### Scott
+  ---
+  ### Matthis
+  ---
+  ### Nans
+  - Tests unitaires [4h passées aujourd'hui]
+  - Recheck du code [3h passées aujourd'hui]
+  ---
+  ### Loïc
+  ---
+  ### Hugo
+  ---
+  ### Germain
+  ---
+ 
+ 
