@@ -28,9 +28,12 @@ module.exports.routes = {
     "POST /api/chat": "ChatController.add",
     //MESSAGE ROUTES
     "POST /api/message": "ChatController.send",
+    "GET /api/messages": "ContactController.getMessages",
     //MATCH DECISION ROUTES
     "GET /api/matchDecision": "DecisionController.get",
     "PUT /api/matchDecision": "DecisionController.update",
     //SMS ROUTES
-    "POST /api/sms/advertising": "SmsController.sendAdvertismentSms"
+    "POST /api/sms/advertising": "SmsController.sendAdvertismentSms",
+    //CONTACT ROUTES
+    "GET /api/chats": "ContactController.getAll",
 };

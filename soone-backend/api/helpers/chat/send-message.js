@@ -56,7 +56,7 @@ module.exports = {
         var sender;
         var now = moment().format('YYYY-MM-DD HH:mm:ss');
         
-        if(moment(chat.endDate).format('YYYY-MM-DD HH:mm:ss') < now && !chat.active) {
+        if(!sails.helpers.chat.isContact.with({chat})) {
             return exits.inactiveConversation();
         }
 

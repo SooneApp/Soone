@@ -128,26 +128,50 @@ before(function (done) {
                         "active": true
                     }])
                     .exec(function createCB(err, user) {
-                        Decision.createEach([
+                        Message.createEach([
                             {
-                                "id": "505a5395-e993-4bd8-9345-a601284fc660",
-                                "idChat": "505a5395-e993-4bd8-9345-a601284fc654",
-                                "idUser": "d344d15f-0721-48cc-a113-a7243307e80",
-                                "decision": true
+                                "id": "505a5395-e993-5d25-9345-a601284fc680",
+                                "chatId": "505a5395-e993-4bd8-9345-a601284fc656",
+                                "senderId": "d344d15f-0721-48cc-a113-a7243307e83",
+                                "content": "Hi beautiful",
+                                "date": moment().subtract(5, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
                             },
                             {
-                                "id": "505a5395-e993-4bd8-9345-a601284fc661",
-                                "idChat": "505a5395-e993-4bd8-9345-a601284fc654",
-                                "idUser": "d344d15f-0721-48cc-a113-a7243307e81",
-                                "decision": false
+                                "id": "505a5395-e993-5d25-9345-a601284fc681",
+                                "chatId": "505a5395-e993-4bd8-9345-a601284fc656",
+                                "senderId": "d344d15f-0721-48cc-a113-a7243307e81",
+                                "content": "Good morning you scumbag",
+                                "date": moment().subtract(4, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
+                            },
+                            {
+                                "id": "505a5395-e993-5d25-9345-a601284fc682",
+                                "chatId": "505a5395-e993-4bd8-9345-a601284fc656",
+                                "senderId": "d344d15f-0721-48cc-a113-a7243307e83",
+                                "content": "Will you sit on my face tonight ?",
+                                "date": moment().subtract(3, 'minutes').format('YYYY-MM-DD HH:mm:ss'),
                             }])
                             .exec(function createCB(err, user) {
-                                done();
+                                Decision.createEach([
+                                    {
+                                        "id": "505a5395-e993-4bd8-9345-a601284fc660",
+                                        "idChat": "505a5395-e993-4bd8-9345-a601284fc654",
+                                        "idUser": "d344d15f-0721-48cc-a113-a7243307e80",
+                                        "decision": true
+                                    },
+                                    {
+                                        "id": "505a5395-e993-4bd8-9345-a601284fc661",
+                                        "idChat": "505a5395-e993-4bd8-9345-a601284fc654",
+                                        "idUser": "d344d15f-0721-48cc-a113-a7243307e81",
+                                        "decision": false
+                                    }])
+                                    .exec(function createCB(err, user) {
+                                        done();
+                                    });
+                                });
                             });
                     });
             });
     });
-});
 
 after(function (done) {
     Sails.lower(done);
