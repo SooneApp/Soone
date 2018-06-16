@@ -81,6 +81,8 @@ module.exports = {
 
         await Message.create(parameters);
 
+        sails.log(sender.name + " sent a message to " + receiver.name);
+
         admin.messaging().send({
             data: {
                 chatId: inputs.chatId,
