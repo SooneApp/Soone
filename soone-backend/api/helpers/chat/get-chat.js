@@ -39,6 +39,8 @@ module.exports = {
             return exits.notExists();
         }
 
+        sails.log("Returned chat with id : " + parameters.id);
+
         return exits.success(chat);
     }
-};
+}; 

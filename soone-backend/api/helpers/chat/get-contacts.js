@@ -34,6 +34,8 @@ module.exports = {
         .map(function(chat) {
             return sails.helpers.chat.sortChat.with({chat});
         });
+
+        sails.log("Returned contacts of user with id : " + inputs.userId);
             
         return exits.success(contacts);
     }

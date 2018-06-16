@@ -38,6 +38,8 @@ module.exports = {
 
         chat = await Chat.update(parameters).set(inputs).fetch();
 
+        sails.log("The chat with id : " + parameters.id + " is now active : " + inputs.active);
+
         return exits.success(chat[0]);
     }
 };

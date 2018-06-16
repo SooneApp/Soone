@@ -26,6 +26,8 @@ module.exports = {
     fn: async function (inputs, exits) {
         await sails.helpers.user.updateUser.with(inputs);
 
+        sails.log("The user with id : " + inputs.id + " is now connected");
+
         return exits.success();
     }
 };

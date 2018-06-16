@@ -10,7 +10,6 @@ function associate (user) {
             if(match(user,waitingList[element]) && match(waitingList[element],user)) {
                 result = waitingList[element];
                 waitingList.splice(element,1);
-                sails.log(result.name + " removed from instant search");
                 break;
             }
         }
@@ -41,8 +40,6 @@ function queue(user) {
     } else {
         waitingList.push(user);
     }
-
-    sails.log(user.name + " queued to instant search");
 }
 
 function sendMessage(message,target) {
@@ -54,6 +51,9 @@ module.exports = {
     register: async function (req, res) { 
         var parameters = await sails.helpers.parseParameters.with({req});
         var user = await sails.helpers.user.getUser.with({id: parameters.id});
+
+        sails.log(user.name + " joined instant search");
+
         user = Object.assign(parameters, user);
         user = await sails.helpers.user.parseData.with({user});
 
@@ -62,6 +62,9 @@ module.exports = {
             var associationTokken = association.appToken;
             var userTokken = user.appToken;
             var chat = await sails.helpers.chat.addChat.with({idUser1: association.id, idUser2: user.id});
+
+            sails.log(user.name + " left instant search");
+            sails.log(association.name + " left instant search");
 
             var message = {
                 data: {

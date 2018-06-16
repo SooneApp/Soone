@@ -50,6 +50,8 @@ module.exports = {
             return exits.unauthorized();
         }
 
+        sails.log("Returned messages of chat with id : " + inputs.chatId + " to user with id : " + inputs.userId);
+
         return exits.success(chat.messages);
     }
 };
