@@ -217,6 +217,10 @@ Objectif atteint avec un reste à faire pour le lendemain.
       - Réalisation de tests semi automatisés (requérant une intervention) afin de valider la récéption des données sur une application android
   ---
   ### Hugo
+  - Ajout des controlleurs de SMS en production
+    - Envoie de SMS pour recevoir le liens de l'application
+    - Envoie de SMS pour recevoir le code de validation lors de l'inscription
+  - Ajout du site vitrine sur le serveur
   ---
   ### Germain
    - Ajout redirection HTTP vers HTTPS
@@ -257,6 +261,8 @@ Objectif atteint avec un reste à faire pour le lendemain.
       - Désactivation des policies d'authentification pour faciliter les tests android
   ---
   ### Hugo
+  - Mise a jour du controlleur de SMS
+  - Ajout du site vitrine de l'application sur le serveur et modification DNS
   ---
   ### Germain
     - Design de la marque, logo et icônes
@@ -286,6 +292,9 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ### Loïc
   ---
   ### Hugo
+  - Mise a jour du tableau de bord des erreurs du système
+  - Ajout du HTTPS sur le site vitrine
+  - Correctifs des différentes version du controlleur de SMS
   ---
   ### Germain
   ---
