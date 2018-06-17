@@ -79,7 +79,7 @@ module.exports = {
         };
         parameters.id = uuid();
 
-        var message = await Message.create(parameters);
+        var message = await Message.create(parameters).fetch();
 
         sails.log(sender.name + " sent a message to " + receiver.name);
 
