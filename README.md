@@ -2,7 +2,7 @@
 
 ## Vendredi 25 mai
 
-### TouT le monde
+### Tout le monde
  - Brainstorming
  - Explication du concept du projet
 
@@ -267,6 +267,10 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ### Scott
   ---
   ### Matthis
+   - Tests en réel des SMS
+   - Changements mineurs sur le site
+   - Review de code
+   - Preparation de la démos
   ---
   ### Nans
   - Tests unitaires [4h passées aujourd'hui]
