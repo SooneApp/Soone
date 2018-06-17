@@ -290,6 +290,11 @@ Objectif atteint avec un reste à faire pour le lendemain.
   - Recheck du code [3h passées aujourd'hui]
   ---
   ### Loïc
+    - Travail sur le système de contact : terminé [estimé à 1 jour, terminé en 1 jour]
+      - Création des routes, controllers et tests unitaires pour récupérer la liste de contacts
+      - Création des routes, controllers et tests unitaires pour récupérer les messages d'une conversation
+    - Affinage des logs côté serveur pour une meilleure compréhension des erreurs 
+    - Les tâches du back-end sont terminées
   ---
   ### Hugo
   - Mise a jour du tableau de bord des erreurs du système
