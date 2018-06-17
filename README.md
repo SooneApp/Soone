@@ -142,6 +142,7 @@ Les statistiques sont importantes pour debuguer l'appliquation et comprendre les
  
  ---
  ### Scott
+ - Ajout de l'edition d'un profil.
  
  ---
  ### Matthis
@@ -190,6 +191,8 @@ Objectif atteint avec un reste à faire pour le lendemain.
   
   ---
   ### Scott
+   - Correction de bug dans l'edition d'un profil.
+   - Mise en place de la liasion avec le server sur la récupération et l'édition du profil utilisateur.
   
   ---
   ### Matthis
@@ -228,6 +231,7 @@ Objectif atteint avec un reste à faire pour le lendemain.
   
   ---
   ### Scott
+   - Correction de bug dans la liaison avec le serveur.
   ---
   ### Matthis
    - Mise à jour mineur du site.
@@ -265,6 +269,9 @@ Objectif atteint avec un reste à faire pour le lendemain.
   
   ---
   ### Scott
+  - Création de la fonctionalité de match.
+  - Lisaion avec le serveur de la fonctionalité de match.
+  
   ---
   ### Matthis
    - Tests en réel des SMS
@@ -283,4 +290,14 @@ Objectif atteint avec un reste à faire pour le lendemain.
   ### Germain
   ---
  
- 
+ ## Samedi 16 juin
+  ### Scott
+  - Création de la vue de chat
+  - Ajout de l'envoie et la reception de messages.
+ ## Dimanche 17 juin
+  ### Scott
+  - Création de la vue de decision de match
+  - Lien avec le serveur pour la decision de match
+  - Création de la vue d'inscription
+  - Lien avec le serveur pourl a création dun compte
+
