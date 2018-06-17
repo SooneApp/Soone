@@ -79,14 +79,14 @@ module.exports = {
         };
         parameters.id = uuid();
 
-        await Message.create(parameters);
+        var message = await Message.create(parameters);
 
         sails.log(sender.name + " sent a message to " + receiver.name);
 
         admin.messaging().send({
             data: {
-                chatId: inputs.chatId,
-                content: inputs.content
+                sender: JSON.stringify(await sails.helpers.user.sortUser.with({user: sender})),
+                message: JSON.stringify(await sails.helpers.chat.sortMessage.with({message}))
             },
             notification: {
                 "title":"Soone message",
